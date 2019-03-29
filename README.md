@@ -1,8 +1,8 @@
 # Practica Programacion II
-##Idea
+## Idea
 
-##TO-DO Lista (Temporal)
+## TO-DO Lista (Temporal)
 
-##Contenidos
+## Contenidos
 
-##Miembros
+## Miembros
