@@ -1,5 +1,2 @@
-# Auto detect text files and perform LF normalization
-* text=auto
 
-static/* linguist-vendored
 *.rb linguist-language=Java
