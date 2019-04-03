@@ -2,3 +2,4 @@
 * text=auto
 
 static/* linguist-vendored
+*.rb linguist-language=Java
