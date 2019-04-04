@@ -18,7 +18,23 @@ public class HelloWorld {
 		
 
 		
+			for (int i = 0; i < args.length; i++) {
+				String string = args[i];
+				
+			}
 			
+			
+			
+			
+			switch (key) {
+			case value:
+				
+				break;
+
+			default:
+				break;
+			}
 		}
+	
 	
 }
