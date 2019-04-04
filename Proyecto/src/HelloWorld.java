@@ -7,7 +7,10 @@ public class HelloWorld {
 		System.out.println("testewr");
 		
 		System.out.println("TEster 2");
-		
+		while (it.hasNext()) {
+			type type = (type) it.next();
+			
+		}
 		for (int i = 0; i < args.length; i++) {
 		String string = args[i];
 		
