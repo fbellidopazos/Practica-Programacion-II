@@ -4,5 +4,9 @@ public class HelloWorld {
 		System.out.println("Hello World");
 
 		System.out.println("Hello World");
+		while (it.hasNext()) {
+			type type = (type) it.next();
+			
+		}
 	}
 }
