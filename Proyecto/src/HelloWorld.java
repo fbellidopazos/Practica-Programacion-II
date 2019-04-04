@@ -8,7 +8,10 @@ public class HelloWorld {
 		
 		System.out.println("TEster 2");
 		
+		for (int i = 0; i < args.length; i++) {
+		String string = args[i];
 		
+	}
 		
 
 		
