@@ -16,5 +16,11 @@ public class HelloWorld {
 			String string = args[i];
 			
 		}
+
+		
+		while (it.hasNext()) {
+			type type = (type) it.next();
+			
+		}
 	}
 }
