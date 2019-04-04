@@ -9,7 +9,7 @@
 ## Contenidos
 1. Practica
    1. src : Archivos 
-   1. lib : Librerias externas
+   
 1. Item 3
 
 ## Miembros
