@@ -12,5 +12,9 @@ public class HelloWorld {
 			
 		}
 		
+		while (it.hasNext()) {
+			type type = (type) it.next();
+			
+		}
 	}
 }
