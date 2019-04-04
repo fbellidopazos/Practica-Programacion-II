@@ -7,5 +7,17 @@ public class HelloWorld {
 		System.out.println("testewr");
 		
 		System.out.println("TEster 2");
+		
+		
+		
+		
+		
+		
+		
+		
+		while (it.hasNext()) {
+			type type = (type) it.next();
+			
+		}
 	}
 }
