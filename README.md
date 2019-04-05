@@ -8,9 +8,7 @@ https://marketplace.eclipse.org/content/markdown-text-editor --> Editar Readme.m
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 - [x] this is a complete item
 - [ ] this is an incomplete item
-- [ ] ```Java
-Hello World
-```
+
 
 ## Contenidos
 1. Practica
