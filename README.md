@@ -13,9 +13,13 @@ https://marketplace.eclipse.org/content/markdown-text-editor --> Editar Readme.m
 ## Contenidos
 1. Practica
    1. src : Archivos 
+   1. lib : Librearias utilizadas
    
-1. Item 3
+1. tads1819.jar : Librearia stacks,pilas,...
 
 ## Miembros
 * Sara Beatriz Alonso 
 * Fernando Bellido Pazos
+
+
+[README.md](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
