@@ -1,13 +1,13 @@
 # Practica Programacion II
 ## Ideas
-https://www.eclipse.org/egit/ --> Github (When Not Collab)
-https://www.saros-project.org/installation  --> Collab Share
-https://marketplace.eclipse.org/content/markdown-text-editor --> Editar Readme.md
++ https://www.eclipse.org/egit/ --> Github (When Not Collab)
++ https://www.saros-project.org/installation  --> Collab Share
++ https://marketplace.eclipse.org/content/markdown-text-editor --> Editar Readme.md
 
 ## TO-DO Lista (Temporal)
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] this is a complete item
-- [ ] this is an incomplete item
+- [ ] Leer enunciado
+- [ ] Ejercicios Enunciado
 
 
 ## Contenidos
