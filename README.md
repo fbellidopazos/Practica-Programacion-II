@@ -13,9 +13,11 @@ https://marketplace.eclipse.org/content/markdown-text-editor --> Editar Readme.m
 ## Contenidos
 1. Practica
    1. src : Archivos 
+   		1.EnunciadoNowMeal1819.pdf : Enunciado Practica
    1. lib : Librearias utilizadas
    
 1. tads1819.jar : Librearia stacks,pilas,...
+1. CorrectorOffline.jar : Libreria Corrector
 
 ## Miembros
 * Sara Beatriz Alonso 
