@@ -45,12 +45,12 @@
 ## Contenidos
 1. Practica
    1. src : Archivos 
-   		1. EnunciadoNowMeal1819.pdf : Enunciado Practica
-   		1. autores.txt : Informacion acerca de Autores
+   1. EnunciadoNowMeal1819.pdf : Enunciado Practica
+   1. autores.txt : Informacion acerca de Autores
    1. lib : Librearias utilizadas
-   
-1. tads1819.jar : Librearia stacks,pilas,...
-1. CorrectorOffline.jar : Libreria Corrector
+      1. tads1819.jar : Librearia stacks,pilas,...
+      1. CorrectorOffline.jar : Libreria Corrector
+   1. doc : JavaDocs
 
 ## Miembros
 * Sara Beatriz Alonso 
