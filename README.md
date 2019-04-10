@@ -3,6 +3,7 @@
 + https://www.eclipse.org/egit/ --> Github (When Not Collab)
 + https://www.saros-project.org/installation  --> Collab Share
 + https://marketplace.eclipse.org/content/markdown-text-editor --> Editar Readme.md
+	+ https://nodeclipse.github.io/updates/markdown/ (Install)
 
 ## TO-DO List
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
@@ -39,20 +40,14 @@
       1. [ ] FurgonetaSubcontratada
          1. [ ] Atributos
          1. [ ] Metodos    
-      
-         
-      
-        
-   
-      
-   
-1. [ ] Ejercicios Enunciado
+1. [ ] JUnit Correcto 
 
 
 ## Contenidos
 1. Practica
    1. src : Archivos 
    		1. EnunciadoNowMeal1819.pdf : Enunciado Practica
+   		1. autores.txt : Informacion acerca de Autores
    1. lib : Librearias utilizadas
    
 1. tads1819.jar : Librearia stacks,pilas,...
