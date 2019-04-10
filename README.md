@@ -8,13 +8,27 @@
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 1. [ ] Paquete gestionpedidos
    1. [ ] GestionReparto
-      1. [ ] GestionReparto(Constructor)
-      1. [ ] asignarPedido
-      1. [ ] notificarEntregaPedido
-   1. [ ] GestionRepartoLocal
-      1. [ ] GestionReparto(Constructor)
-      1. [ ] asignarPedido
-      1. [ ] notificarEntregaPedido
+      1. [ ] GestionReparto
+         1. [ ] GestionReparto(Constructor)
+         1. [ ] addTransporteLocalidad
+         1. [ ] asignarPedido
+         1. [ ] notificarEntregaPedido
+      1. [ ] GestionRepartoLocal
+         1. [ ] add
+         1. [ ] asignarPedido
+         1. [ ] notificarEntregaPedido
+   1. [x] gestionpedidos.mapa
+   1. [ ] gestionpedidos.pedido
+      1. [ ] Pedido
+         1. [ ] Pedido(Constructor)
+         1. [ ] getPeso
+         1. [ ] coste
+         
+      
+        
+   
+      
+   
 1. [ ] Ejercicios Enunciado
 
 
