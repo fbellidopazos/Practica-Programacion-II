@@ -11,7 +11,10 @@
       1. [ ] GestionReparto(Constructor)
       1. [ ] asignarPedido
       1. [ ] notificarEntregaPedido
-   1. [ ] GestionReparto
+   1. [ ] GestionRepartoLocal
+      1. [ ] GestionReparto(Constructor)
+      1. [ ] asignarPedido
+      1. [ ] notificarEntregaPedido
 1. [ ] Ejercicios Enunciado
 
 
