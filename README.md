@@ -6,8 +6,13 @@
 
 ## TO-DO Lista (Temporal)
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [ ] Leer enunciado
-- [ ] Ejercicios Enunciado
+1. [ ] Paquete gestionpedidos
+   1. [ ] GestionReparto
+      1. [ ] GestionReparto(Constructor)
+      1. [ ] asignarPedido
+      1. [ ] notificarEntregaPedido
+   1. [ ] GestionReparto
+1. [ ] Ejercicios Enunciado
 
 
 ## Contenidos
