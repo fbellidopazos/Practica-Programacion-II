@@ -1,11 +1,20 @@
 package gestionpedidos;
 
+
 import gestionpedidos.mapa.Mapa;
 import gestionpedidos.pedido.Pedido;
 import gestionpedidos.transportes.Transporte;
-
+import anotacion.Programacion2;
+@Programacion2 (
+		nombreAutor1 = "Sara",
+		apellidoAutor1 = "Alonso apellido2",
+		emailUPMAutor1 = "usr@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 public class GestionReparto {
-	// CÓDIGO DE APOYO
+	// Cï¿½DIGO DE APOYO
 	private GestionRepartoLocal[] gestoresLocales;
 	private Mapa mapa;
 	
@@ -13,17 +22,17 @@ public class GestionReparto {
 		//TO-DO
 	}
 	
-	//CÓDIGO DE APOYO
+	//Cï¿½DIGO DE APOYO
 	public Mapa getMapa() {
 		return mapa;
 	}
 	
-	// CÓDIGO DE APOYO
+	// Cï¿½DIGO DE APOYO
 	public String getEstadoGestorLocal(int i){
 		return this.gestoresLocales[i].getDisponibles() + this.gestoresLocales[i].getEsperando();
 	}
 	
-	// CÓDIGO DE APOYO
+	// Cï¿½DIGO DE APOYO
 	public String getEstadoGestorLocalNum(int i){
 		return this.gestoresLocales[i].getCodMotosDisponibles().size() + ";" +
 				this.gestoresLocales[i].getCodFurgoDisponibles().size() + ";" +
@@ -36,7 +45,7 @@ public class GestionReparto {
 		//TO-DO
 	}
 		
-	//PRE: el pedido no tiene asignado ningún transporte
+	//PRE: el pedido no tiene asignado ningï¿½n transporte
 	public void asignarPedido(Pedido pedido){
 		//TO-DO
 	}

@@ -17,13 +17,13 @@
       1. [ ] add
       1. [ ] asignarPedido
       1. [ ] notificarEntregaPedido
-1. [x] gestionpedidos.mapa
-1. [ ] gestionpedidos.pedido
+1. [x] Paquete gestionpedidos.mapa
+1. [ ] Paquete gestionpedidos.pedido
    1. [ ] Pedido
       1. [ ] Pedido(Constructor)
       1. [ ] getPeso
       1. [ ] coste          
-1. [ ] gestionpedidos.transporte
+1. [ ] Paquete gestionpedidos.transporte
    1. [ ] Transporte
       1. [ ] Atributos
       1. [ ] Metodos

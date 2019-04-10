@@ -21,7 +21,15 @@ import gestionpedidos.transportes.FurgonetaPropia;
 import gestionpedidos.transportes.FurgonetaSubcontratada;
 import gestionpedidos.transportes.Moto;
 import gestionpedidos.transportes.Transporte;
-
+import anotacion.Programacion2;
+@Programacion2 (
+		nombreAutor1 = "Sara",
+		apellidoAutor1 = "Alonso apellido2",
+		emailUPMAutor1 = "usr@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 public class AtributosDeclaradosTest {
 	
 	@Test	
@@ -180,9 +188,9 @@ public class AtributosDeclaradosTest {
 				if (attrSpecialization[i]!=null){
 					if (((ParameterizedType)atributo.getGenericType()).getActualTypeArguments()==null ||
 							((ParameterizedType)atributo.getGenericType()).getActualTypeArguments().length==0){
-						fail("Debe declarar el atributo "+attrNames[i]+" de tipo "+attrTypes[i]+" y su tipo de parámetro debe ser "+attrSpecialization[i]+" en la clase "+className);
+						fail("Debe declarar el atributo "+attrNames[i]+" de tipo "+attrTypes[i]+" y su tipo de parï¿½metro debe ser "+attrSpecialization[i]+" en la clase "+className);
 					}
-					assertEquals("Debe declarar el atributo "+attrNames[i]+" de tipo "+attrTypes[i]+" y su tipo de pará"
+					assertEquals("Debe declarar el atributo "+attrNames[i]+" de tipo "+attrTypes[i]+" y su tipo de parï¿½"
 							+ "metro debe ser "+attrSpecialization[i]+" en la clase "+className, attrSpecialization[i].getTypeName(), ((ParameterizedType)atributo.getGenericType()).getActualTypeArguments()[0].getTypeName() );
 				}
 				

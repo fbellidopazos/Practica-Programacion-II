@@ -2,7 +2,15 @@ package gestionpedidos.mapa;
 
 import java.util.HashMap;
 import list.ArrayList;
-
+import anotacion.Programacion2;
+@Programacion2 (
+		nombreAutor1 = "Sara",
+		apellidoAutor1 = "Alonso apellido2",
+		emailUPMAutor1 = "usr@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 public class Mapa {
 	
 	private HashMap<String, PosicionXY> objetos;
@@ -26,7 +34,7 @@ public class Mapa {
 	
 	private void validar(PosicionXY pos) {
 		if (!(pos.getX() >= 0 && pos.getX() <= maxCoordX) || !(pos.getY() >= 0 && pos.getY() <= maxCoordY))
-			throw new IllegalArgumentException("Posición dada fuera del mapa:" + pos.getX() + ", " + pos.getY());		
+			throw new IllegalArgumentException("Posiciï¿½n dada fuera del mapa:" + pos.getX() + ", " + pos.getY());		
 	}
 	
 	public int getMaxCoordY() {
@@ -43,7 +51,7 @@ public class Mapa {
 		for(i=0; i<objetosEstaticos.size() && !objetos.get(objetosEstaticos.get(i)).equals(pos); i++);
 		
 		if(i < objetosEstaticos.size()){			
-			throw new IllegalArgumentException("Ya hay en el mapa un objeto estático en la posición:" + 
+			throw new IllegalArgumentException("Ya hay en el mapa un objeto estï¿½tico en la posiciï¿½n:" + 
 					pos.getX() + " " + pos.getY());
 		}
 			

@@ -12,11 +12,20 @@ import gestionpedidos.mapa.Mapa;
 import gestionpedidos.mapa.PosicionXY;
 import gestionpedidos.transportes.Furgoneta;
 import gestionpedidos.transportes.FurgonetaPropia;
+import anotacion.Programacion2;
+@Programacion2 (
+		nombreAutor1 = "Sara",
+		apellidoAutor1 = "Alonso apellido2",
+		emailUPMAutor1 = "usr@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 
 public class FurgonetaPropiaJUnitTest {
 	
-	@Rule //Se establece un time out general para todos los tests. Se debe comentar esta línea y la de abajo para depurar
-    public TestRule  globalTimeout = new DisableOnDebug(Timeout.millis(100)); // 100 milisegundos máximos por test	
+	@Rule //Se establece un time out general para todos los tests. Se debe comentar esta lï¿½nea y la de abajo para depurar
+    public TestRule  globalTimeout = new DisableOnDebug(Timeout.millis(100)); // 100 milisegundos mï¿½ximos por test	
 	
 	
 	private FurgonetaPropia furgo;
@@ -27,7 +36,7 @@ public class FurgonetaPropiaJUnitTest {
 	/**
 	 * Test del constructor de la FurgonetaPropia.
 	 * 
-	 * <p>Utiliza los métodos getTara y getCodigo.</p>
+	 * <p>Utiliza los mï¿½todos getTara y getCodigo.</p>
 	 */
 	@Test
 	public void testFurgonetaPropia() {
@@ -45,7 +54,7 @@ public class FurgonetaPropiaJUnitTest {
 	}
 
 	/**
-	 * Test del método coste.
+	 * Test del mï¿½todo coste.
 	 * 
 	 * <p>Utiliza el constructor de FurgonetaPropia y setVelocidadMedia().</p>
 	 */
