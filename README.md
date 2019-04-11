@@ -3,7 +3,30 @@
 + https://www.eclipse.org/egit/ --> Github (When Not Collab)
 + https://www.saros-project.org/installation  --> Collab Share
 + https://marketplace.eclipse.org/content/markdown-text-editor --> Editar Readme.md
-	+ https://nodeclipse.github.io/updates/markdown/ (Install)
+	+ https://nodeclipse.github.io/updates/markdown/ (Install)\
+	
+## Instalacion
+### Github
+	+ Abrir Eclipse Nuevo Proyecto O elegir uno(Recomendacion Crear uno nuevo)
+	+ Arriba a la derecha bsucar Git Repositories (A la izquierda aparecera "view") y pinchar en el
+	+ En la nueva ventana que ha salido pinchar en Clone Repository insertar en URL https://github.com/fbellidopazos/Practica-Programacion-II
+	+ En el apartado de cuenta (En caso de necesitar crearse https://github.com/join?source=prompt-code , Usar Suscripcion gratuita) e insertarla 
+	+ Dar 2 veces a next
+	+ Opcional(En la nueva ventana se puede elegir donde se quiere que se guarde recomendacion en la misma carpeta del proyecto,aunque no afecta en nada) y next(Se acabara la instalacion aqui)
+	+ Para importar el proyecto desplegar el menu de Practica-Prog... y desplegar Working Tree
+		+ Click derecho en "Proyecto" import Projects (Elegir directorio) y terminar 
+### Saros
+	+ En eclipse Help(Meu superior) > Install New Software
+	+ Insertar Link http://dpp.sourceforge.net/update/ y pinchar en Add 
+	+ Añadir nombre y pinchar en add 
+	+ Aparecera un paquete en una pequeña ventana abajo seleccionarlo y next todo el rato y aceptar terminos
+	+ Reinciar Eclipse(El programa lo pide)
+	+ Registrarse en https://saros-con.imp.fu-berlin.de:5280/register/new
+	+ En eclipse pinchar en Saros(menu superior) add account insertar el usuario y contraseña y fin
+
+			
+		
+	
 
 ## TO-DO List
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
