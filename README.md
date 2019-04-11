@@ -23,13 +23,17 @@
 	+ Reinciar Eclipse(El programa lo pide)
 	+ Registrarse en https://saros-con.imp.fu-berlin.de:5280/register/new
 	+ En eclipse pinchar en Saros(menu superior) add account insertar el usuario y contraseña y fin
-
+### Trucos Eclipse (OPCIONALES)
+	+ Window > Preferences > Buscar "Keys" > Buscar "commit" > Asingar combnacion de teclas
+	+ Lo mismo con "pull" (Es el primero de la lista que aparece)
+	+ windows> preferences > buscar "Java Content Assist" de las opciones pinchar> En el menu de abajo en auto Activation triggers borrar o que pone e insertar .ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ,; 
+		+ Permite que cuando escribamos nos de constantemente ayuda que presionando enter nos lo escribe 
+	
 			
 		
 	
 
 ## TO-DO List
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 1. [ ] Paquete gestionpedidos
    1. [ ] GestionReparto
       1. [ ] GestionReparto(Constructor)
