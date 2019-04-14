@@ -19,7 +19,8 @@ public class GestionReparto {
 	
 	public GestionReparto(Mapa mapa){
 		//this.mapa=mapa;
-		//TO DO}
+		//TO DO
+		}
 	
 	//C�DIGO DE APOYO
 	public Mapa getMapa() {

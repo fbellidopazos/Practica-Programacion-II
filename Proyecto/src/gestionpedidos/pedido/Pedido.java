@@ -18,22 +18,33 @@ public class Pedido {
 		this.cliente = cliente;
 		this.comidas = comidas;
 		this.restaurante = restaurante;
-		this.importe = 0;
+
 		this.transporte = null;
 		this.peso = 0;
+		
+		double res=0;
+		for (int i = 0; i < comidas.length; i++) {
+			res+=comidas[i].getPrecio();
+		}
+
+		this.importe = res;
 	}
 
-	public double getPeso(){
-	
-		//TO-DO	//double res=0;
-		for(int i=0; i<comidas.length; i++) {
-			res=res+ comidas[i].getPeso();	
-		}	return 0;res	}
+	public double getPeso() {
+
+		// TO-DO
+		double res = 0;
+		for (int i = 0; i < comidas.length; i++) {
+			res = res + comidas[i].getPeso();
+		}
+		return res;
+	}
 
 	public double coste(Transporte transporte) {
+
 		// TO-DO
-		return (transporte
-				.coste(cliente.getCodigo() + importe + transporte.coste(restaurante.getCodigo(), cliente.getCodigo())));
+
+		return (transporte.coste(cliente.getCodigo()) + importe + transporte.coste(restaurante.getCodigo(), cliente.getCodigo()));
 	}
 
 	// C�DIGO DE APOYO
