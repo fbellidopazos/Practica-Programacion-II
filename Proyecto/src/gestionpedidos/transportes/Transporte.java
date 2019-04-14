@@ -18,13 +18,16 @@ public abstract class Transporte {
 
 	
 
-	public double coste (String codPosDestino){
-		
-		//TO-DO
-	}
+//	public double coste (String codPosDestino){
+//		
+//		//TO-DO
+//	}
 	
 	public abstract double coste(String codPosOrigen,String codPosDestino);
 	
+	public String getCodigo() {
+		return codigo;
+	}
 	
 	//Creado por si acaso
 	public Mapa getMapa() {

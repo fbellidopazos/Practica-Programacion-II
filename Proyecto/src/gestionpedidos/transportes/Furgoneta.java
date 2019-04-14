@@ -16,5 +16,11 @@ public abstract class Furgoneta extends Transporte {
 	
 	 @Override
 	public abstract double coste(String codPosOrigen, String codPosDestino) ;
+	 
+	
+	public String getCodigo() {
+		// TODO Auto-generated method stub
+		return super.getCodigo();
+	}
 
 }
