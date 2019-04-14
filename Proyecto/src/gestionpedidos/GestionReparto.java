@@ -7,20 +7,19 @@ import gestionpedidos.transportes.Transporte;
 import anotacion.Programacion2;
 @Programacion2 (
 		nombreAutor1 = "Sara",
-		apellidoAutor1 = "Alonso apellido2",
-		emailUPMAutor1 = "usr@alumnos.upm.es",
+		apellidoAutor1 = "Alonso Fernández",
+		emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es",
 		nombreAutor2 = "Fernando",
 		apellidoAutor2 = "Bellido Pazos", 
 		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
 	)
 public class GestionReparto {
-	// C�DIGO DE APOYO
 	private GestionRepartoLocal[] gestoresLocales;
 	private Mapa mapa;
 	
 	public GestionReparto(Mapa mapa){
-		//TO-DO
-	}
+		//this.mapa=mapa;
+		//TO DO}
 	
 	//C�DIGO DE APOYO
 	public Mapa getMapa() {
@@ -47,6 +46,8 @@ public class GestionReparto {
 		
 	//PRE: el pedido no tiene asignado ning�n transporte
 	public void asignarPedido(Pedido pedido){
+		
+		
 		//TO-DO
 	}
 	
