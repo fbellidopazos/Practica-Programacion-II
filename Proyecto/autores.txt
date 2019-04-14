@@ -15,7 +15,3 @@ import anotacion.Programacion2;
 	apellidoAutor2 = "Bellido Pazos", 
 	emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
 )
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/fbellidopazos/Practica-Programacion-II
