@@ -20,4 +20,24 @@ public class FurgonetaSubcontratada extends Furgoneta{
 		
 		return res;
 	}
+	public double coste( String codPosDestino) {
+		double res;
+		String codPosOrigen=super.getCodigo();
+		if (super.getTara()<1000)
+			res = super.getMapa().distancia(codPosOrigen, codPosDestino)*eurosPKm;
+		else 
+			res = super.getMapa().distancia(codPosOrigen, codPosDestino)* (eurosPKm*1.10);
+		
+		return res;
+	}
+
+	public double getEurosPKm() {
+		return eurosPKm;
+	}
+
+	public void setEurosPKm(double eurosPKm) {
+		this.eurosPKm = eurosPKm;
+	}
+	
+	
 }

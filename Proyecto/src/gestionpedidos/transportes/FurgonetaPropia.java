@@ -25,5 +25,35 @@ public class FurgonetaPropia extends Furgoneta {
 		return res;
 
 	}
+	public double coste ( String codPosDestino) {
+		String codPosOrigen=super.getCodigo();
+		double res;
+		if (super.getTara()<500)
+			res = super.getMapa().distancia(codPosOrigen, codPosDestino)* (EUROS_P_HORA/velocidadMedia);
+		else 
+			res= super.getMapa().distancia(codPosOrigen, codPosDestino)* (EUROS_P_HORA/velocidadMedia*1.10);
+		
+		return res;
+
+	}
+
+	
+	
+	public double getVelocidadMedia() {
+		return velocidadMedia;
+	}
+
+	public void setVelocidadMedia(double velocidadMedia) {
+		this.velocidadMedia = velocidadMedia;
+	}
+
+	public double getEUROS_P_HORA() {
+		return EUROS_P_HORA;
+	}
+
+	public void setEUROS_P_HORA(double eUROS_P_HORA) {
+		EUROS_P_HORA = eUROS_P_HORA;
+	}
+	
 
 }
