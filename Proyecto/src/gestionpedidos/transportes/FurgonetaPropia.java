@@ -1,7 +1,16 @@
 package gestionpedidos.transportes;
 
 import gestionpedidos.mapa.Mapa;
+import anotacion.Programacion2;
 
+@Programacion2 (
+		nombreAutor1 = "Sara",
+		apellidoAutor1 = "Alonso Fernández",
+		emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 public class FurgonetaPropia extends Furgoneta {
 	private double velocidadMedia=30;
 	private double EUROS_P_HORA=40;

@@ -2,8 +2,15 @@ package gestionpedidos.pedido;
 
 import gestionpedidos.transportes.Transporte;
 import anotacion.Programacion2;
+@Programacion2 (
+		nombreAutor1 = "Sara",
+		apellidoAutor1 = "Alonso Fernández",
+		emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 
-@Programacion2(nombreAutor1 = "Sara", apellidoAutor1 = "Alonso apellido2", emailUPMAutor1 = "usr@alumnos.upm.es", nombreAutor2 = "Fernando", apellidoAutor2 = "Bellido Pazos", emailUPMAutor2 = "f.bpazos@alumnos.upm.es")
 public class Pedido {
 	// C�DIGO DE APOYO
 	private Cliente cliente;
