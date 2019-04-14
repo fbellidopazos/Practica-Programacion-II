@@ -25,7 +25,7 @@ public abstract class Transporte {
 	public abstract double coste(String codPosOrigen,String codPosDestino);
 	
 	
-	//Creado 
+	//Creado por si acaso
 	public Mapa getMapa() {
 		return mapa;
 	}
