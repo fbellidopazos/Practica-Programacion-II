@@ -7,107 +7,103 @@ import gestionpedidos.transportes.Transporte;
 import list.ArrayList;
 import queues.NaiveQueue;
 
-import java.util.List;
+
 
 import anotacion.Programacion2;
-@Programacion2 (
-		nombreAutor1 = "Sara",
-		apellidoAutor1 = "Alonso Fernández",
-		emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es",
-		nombreAutor2 = "Fernando",
-		apellidoAutor2 = "Bellido Pazos", 
-		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
-	)
 
-public class GestionRepartoLocal {	
+@Programacion2(nombreAutor1 = "Sara", apellidoAutor1 = "Alonso Fernández", emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es", nombreAutor2 = "Fernando", apellidoAutor2 = "Bellido Pazos", emailUPMAutor2 = "f.bpazos@alumnos.upm.es")
+
+public class GestionRepartoLocal {
 	// C�DIGO DE APOYO
 	private ArrayList<Moto> motosDisponibles;
 	private ArrayList<Furgoneta> furgonetasDisponibles;
 
 	private NaiveQueue<Pedido> pedidosEsperandoMoto;
 	private NaiveQueue<Pedido> pedidosEsperandoFurgoneta;
-	
+
 	// C�DIGO DE APOYO
 	private static ArrayList<String> getCodList(ArrayList<?> disponibles) {
 		ArrayList<String> salida = new ArrayList<>();
-		for(int i=0; i<disponibles.size(); i++)
-			salida.add(salida.size(),((Transporte) disponibles.get(i)).getCodigo());
+		for (int i = 0; i < disponibles.size(); i++)
+			salida.add(salida.size(), ((Transporte) disponibles.get(i)).getCodigo());
 		return salida;
 	}
-	
+
 	// C�DIGO DE APOYO
-	private static ArrayList<String[]> getClienteRestauranteList(NaiveQueue<Pedido> pendientes){
-		 ArrayList<String[]> salida = new ArrayList<>();
-		 NaiveQueue<Pedido> aux = new NaiveQueue<>();
-		while(!pendientes.isEmpty()) {
+	private static ArrayList<String[]> getClienteRestauranteList(NaiveQueue<Pedido> pendientes) {
+		ArrayList<String[]> salida = new ArrayList<>();
+		NaiveQueue<Pedido> aux = new NaiveQueue<>();
+		while (!pendientes.isEmpty()) {
 			Pedido pedido = pendientes.poll();
-			
-			salida.add(salida.size(),new String[]{pedido.getCliente().getCodigo(),
-					pedido.getRestaurante().getCodigo()});
+
+			salida.add(salida.size(),
+					new String[] { pedido.getCliente().getCodigo(), pedido.getRestaurante().getCodigo() });
 			aux.add(pedido);
 		}
 		while (!aux.isEmpty())
-			 pendientes.add(aux.poll());
-		
+			pendientes.add(aux.poll());
+
 		return salida;
 	}
-	
+
 	// C�DIGO DE APOYO
-	private static String myArrayListToString (ArrayList<?> list){
+	private static String myArrayListToString(ArrayList<?> list) {
 		String salida = "";
-		for(int i=0; i<list.size(); i++){
-			salida += " " ;
-			if (list.get(i) instanceof String[]){
-				String[] item = (String[])list.get(i);
-				for(int j=0; j<item.length; j++){
-					salida += item[j] ;
-				}	
-			}else if (list.get(i) instanceof String){
-				salida += (String)list.get(i);
+		for (int i = 0; i < list.size(); i++) {
+			salida += " ";
+			if (list.get(i) instanceof String[]) {
+				String[] item = (String[]) list.get(i);
+				for (int j = 0; j < item.length; j++) {
+					salida += item[j];
+				}
+			} else if (list.get(i) instanceof String) {
+				salida += (String) list.get(i);
 			}
 		}
-			
+
 		return salida;
 	}
-	
+
 	// C�DIGO DE APOYO
-	public String getDisponibles(){
-		return "Motos Disponibles:" + myArrayListToString(getCodList(motosDisponibles)) + System.lineSeparator() +
-			"Furgonetas Disponibles:" + myArrayListToString(getCodList(furgonetasDisponibles)) + System.lineSeparator();
-			
+	public String getDisponibles() {
+		return "Motos Disponibles:" + myArrayListToString(getCodList(motosDisponibles)) + System.lineSeparator()
+				+ "Furgonetas Disponibles:" + myArrayListToString(getCodList(furgonetasDisponibles))
+				+ System.lineSeparator();
+
 	}
-	
+
 	// C�DIGO DE APOYO
-	public String getEsperando(){
-		return "Pedidos esperando moto:" + myArrayListToString(getClienteRestauranteList(pedidosEsperandoMoto)) + System.lineSeparator() +
-				"Pedidos esperando furgoneta:" + myArrayListToString(getClienteRestauranteList(pedidosEsperandoFurgoneta)) + System.lineSeparator();
+	public String getEsperando() {
+		return "Pedidos esperando moto:" + myArrayListToString(getClienteRestauranteList(pedidosEsperandoMoto))
+				+ System.lineSeparator() + "Pedidos esperando furgoneta:"
+				+ myArrayListToString(getClienteRestauranteList(pedidosEsperandoFurgoneta)) + System.lineSeparator();
 	}
-	
+
 	// C�DIGO DE APOYO
-	public ArrayList<String> getCodMotosDisponibles(){
+	public ArrayList<String> getCodMotosDisponibles() {
 		return getCodList(motosDisponibles);
-	}	
-	
-	// C�DIGO DE APOYO
-	public ArrayList<String> getCodFurgoDisponibles(){
-		return getCodList(furgonetasDisponibles);
-			
 	}
-	
+
 	// C�DIGO DE APOYO
-	public ArrayList<String[]> getCodEsperandoMoto(){
+	public ArrayList<String> getCodFurgoDisponibles() {
+		return getCodList(furgonetasDisponibles);
+
+	}
+
+	// C�DIGO DE APOYO
+	public ArrayList<String[]> getCodEsperandoMoto() {
 		return getClienteRestauranteList(pedidosEsperandoMoto);
 	}
-	
-	public ArrayList<String[]> getCodEsperandoFurgo(){
+
+	public ArrayList<String[]> getCodEsperandoFurgo() {
 		return getClienteRestauranteList(pedidosEsperandoFurgoneta);
 	}
 
 	private static final double PESOMAXMOTO = 20;
 
 	// C�DIGO DE APOYO
-	public GestionRepartoLocal(){		
-		
+	public GestionRepartoLocal() {
+
 		this.motosDisponibles = new ArrayList<>();
 		this.furgonetasDisponibles = new ArrayList<>();
 
@@ -115,32 +111,74 @@ public class GestionRepartoLocal {
 		this.pedidosEsperandoMoto = new NaiveQueue<>();
 	}
 
-	//PRE: el transporte no ha sido asignado a ninguna zona
-		public void add(Transporte transporte){
-			//TO-DO
-			if (transporte instanceof Moto)
-				motosDisponibles.add(motosDisponibles.size(), transporte);
-			if (transporte instanceof Furgoneta)
-				furgonetasDisponibles.add(furgonetasDisponibles.size(), transporte);
-			
-		}
-				
-		//PRE: el pedido no tiene asignado ningï¿½n transporte
-		public void asignarPedido(Pedido pedido){
-			//TO-DO	
-			if(pedido.getPeso()<=80) {
-				if(motosDisponibles.isEmpty())
-					pedidosEsperandoMoto.add(pedido);
-				else 
-					for(int i=0; i<motosDisponibles.size(); i++) {
-						if()
-					}
-			}
-			
-		}
-		
-		//PRE: el pedido tiene asignado un transporte
-		public void notificarEntregaPedido(Pedido pedido) {	
-			//TO-DO	
-		}
+	// PRE: el transporte no ha sido asignado a ninguna zona
+	public void add(Transporte transporte) {
+		// TO-DO
+		if (transporte instanceof Moto)
+			motosDisponibles.add(motosDisponibles.size(), (Moto) transporte);
+		if (transporte instanceof Furgoneta)
+			furgonetasDisponibles.add(furgonetasDisponibles.size(), (Furgoneta) transporte);
+
 	}
+
+	// PRE: el pedido no tiene asignado ningï¿½n transporte
+	public void asignarPedido(Pedido pedido) {
+
+		// TO-DO
+		if (pedido.getPeso() <= PESOMAXMOTO) {
+			if (motosDisponibles.size() == 0)
+				pedidosEsperandoMoto.add(pedido);
+			else {
+				//Buscamos el Minimo de las motos bajo el parametro COSTE O(n)
+				Moto minimaMoto = motosDisponibles.get(0);
+				for (int i = 1; i < motosDisponibles.size(); i++) {
+					if (pedido.coste(minimaMoto) > pedido.coste(motosDisponibles.get(i))) {
+						minimaMoto = motosDisponibles.get(i);
+					}
+
+				}
+
+				pedido.setTransporte(minimaMoto);
+				motosDisponibles.remove(minimaMoto);
+
+			}
+
+		}
+
+		else {
+			if (furgonetasDisponibles.size() == 0)
+				pedidosEsperandoFurgoneta.add(pedido);
+			else {
+				//Buscamos el Minimo de las Furgonetas bajo el parametro COSTE O(n)
+				Furgoneta minimaFurgoneta = furgonetasDisponibles.get(0);
+				for (int i = 1; i < furgonetasDisponibles.size(); i++) {
+					if (pedido.coste(minimaFurgoneta) > pedido.coste(furgonetasDisponibles.get(i))) {
+						minimaFurgoneta = furgonetasDisponibles.get(i);
+					}
+
+				}
+
+				pedido.setTransporte(minimaFurgoneta);
+				furgonetasDisponibles.remove(minimaFurgoneta);
+			}
+		}
+
+	}
+
+	// PRE: el pedido tiene asignado un transporte
+	public void notificarEntregaPedido(Pedido pedido) {
+		// TO-DO
+		if (pedido.getTransporte() instanceof Moto) {
+			if (pedidosEsperandoMoto.isEmpty())
+				motosDisponibles.add(motosDisponibles.size(),(Moto) pedido.getTransporte());
+			else
+				pedidosEsperandoMoto.poll().setTransporte(pedido.getTransporte());
+		} else {
+			if (pedidosEsperandoFurgoneta.isEmpty())
+				furgonetasDisponibles.add(furgonetasDisponibles.size(),(Furgoneta) pedido.getTransporte());
+			else
+				pedidosEsperandoFurgoneta.poll().setTransporte(pedido.getTransporte());
+		}
+
+	}
+}
