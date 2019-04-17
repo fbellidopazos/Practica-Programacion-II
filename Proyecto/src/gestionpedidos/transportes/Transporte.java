@@ -27,13 +27,16 @@ public abstract class Transporte {
 
 	
 
-//	public double coste (String codPosDestino){
-//		
-//		//TO-DO
-//	}
+	public double coste (String codPosDestino){
+		
+		return coste(codigo,codPosDestino);
+	}
 	
 	public abstract double coste(String codPosOrigen,String codPosDestino);
 	
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
 	public String getCodigo() {
 		return codigo;
 	}

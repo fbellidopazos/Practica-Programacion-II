@@ -18,7 +18,7 @@ public class GestionReparto {
 	private Mapa mapa;
 	
 	public GestionReparto(Mapa mapa){
-		//this.mapa=mapa;
+		this.mapa=mapa;
 		//TO DO
 		}
 	
@@ -43,6 +43,7 @@ public class GestionReparto {
 	//PRE: el transporte no ha sido asignado a ninguna zona
 	public void addTransporteLocalidad(Transporte transporte) {
 		//TO-DO
+		transporte.
 	}
 		
 	//PRE: el pedido no tiene asignado ning�n transporte
@@ -50,6 +51,7 @@ public class GestionReparto {
 		
 		
 		//TO-DO
+		
 	}
 	
 	//PRE: el pedido tiene asignado un transporte

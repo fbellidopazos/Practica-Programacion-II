@@ -29,10 +29,8 @@ public abstract class Furgoneta extends Transporte {
 	
 	 
 	 
-	 
-	public String getCodigo() {
-		// TODO Auto-generated method stub
-		return super.getCodigo();
-	}
+	
+	
+	
 
 }

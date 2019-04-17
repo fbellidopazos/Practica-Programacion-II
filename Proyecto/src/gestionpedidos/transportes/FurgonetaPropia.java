@@ -13,7 +13,7 @@ import anotacion.Programacion2;
 	)
 public class FurgonetaPropia extends Furgoneta {
 	private double velocidadMedia=30;
-	private double EUROS_P_HORA=40;
+	private static final double EUROS_P_HORA=40;
 	
 	public FurgonetaPropia (String codigo, Mapa mapa, double tara) {
 		super(codigo,mapa,tara);
@@ -56,13 +56,7 @@ public class FurgonetaPropia extends Furgoneta {
 		this.velocidadMedia = velocidadMedia;
 	}
 
-	public double getEUROS_P_HORA() {
-		return EUROS_P_HORA;
-	}
-
-	public void setEUROS_P_HORA(double eUROS_P_HORA) {
-		EUROS_P_HORA = eUROS_P_HORA;
-	}
+	
 	
 
 }

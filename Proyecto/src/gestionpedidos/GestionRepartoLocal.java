@@ -6,6 +6,9 @@ import gestionpedidos.transportes.Moto;
 import gestionpedidos.transportes.Transporte;
 import list.ArrayList;
 import queues.NaiveQueue;
+
+import java.util.List;
+
 import anotacion.Programacion2;
 @Programacion2 (
 		nombreAutor1 = "Sara",
@@ -113,17 +116,31 @@ public class GestionRepartoLocal {
 	}
 
 	//PRE: el transporte no ha sido asignado a ninguna zona
-	public void add(Transporte transporte){
-		//TO-DO
-	}
+		public void add(Transporte transporte){
+			//TO-DO
+			if (transporte instanceof Motoo)
+				motosDisponibles.add(motosDisponibles.size(), transporte);
+			if (transporte instanceof Furgonetai)
+				furgonetasDisponibles.add(furgonetasDisponibles.size(), transporte);
 			
-	//PRE: el pedido no tiene asignado ning�n transporte
-	public void asignarPedido(Pedido pedido){
-		//TO-DO		
+		}
+				
+		//PRE: el pedido no tiene asignado ningï¿½n transporte
+		public void asignarPedido(Pedido pedido){
+			//TO-DO	
+			if(pedido.getPeso()<=80) {
+				if(motosDisponibles.isEmpty())
+					pedidosEsperandoMoto.add(pedido);
+				else 
+					for(int i=0; i<motosDisponibles.size(); i++) {
+						if()
+					}
+			}
+			
+		}
+		
+		//PRE: el pedido tiene asignado un transporte
+		public void notificarEntregaPedido(Pedido pedido) {	
+			//TO-DO	
+		}
 	}
-	
-	//PRE: el pedido tiene asignado un transporte
-	public void notificarEntregaPedido(Pedido pedido) {	
-		//TO-DO	
-	}
-}
