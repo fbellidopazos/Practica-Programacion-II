@@ -118,9 +118,9 @@ public class GestionRepartoLocal {
 	//PRE: el transporte no ha sido asignado a ninguna zona
 		public void add(Transporte transporte){
 			//TO-DO
-			if (transporte instanceof Motoo)
+			if (transporte instanceof Moto)
 				motosDisponibles.add(motosDisponibles.size(), transporte);
-			if (transporte instanceof Furgonetai)
+			if (transporte instanceof Furgoneta)
 				furgonetasDisponibles.add(furgonetasDisponibles.size(), transporte);
 			
 		}
