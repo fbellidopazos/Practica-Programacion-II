@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="gestionpedidos.transportes.Furgoneta" project="Proyecto" 
     file="/Proyecto/src/gestionpedidos/transportes/Furgoneta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="384" y="487"/>    
+    <position height="-1" width="-1" x="376" y="486"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
