@@ -2,14 +2,8 @@ package gestionpedidos.pedido;
 
 import gestionpedidos.transportes.Transporte;
 import anotacion.Programacion2;
-@Programacion2 (
-		nombreAutor1 = "Sara",
-		apellidoAutor1 = "Alonso FernÃ¡ndez",
-		emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es",
-		nombreAutor2 = "Fernando",
-		apellidoAutor2 = "Bellido Pazos", 
-		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
-	)
+
+@Programacion2(nombreAutor1 = "Sara", apellidoAutor1 = "Alonso Fernandez", emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es", nombreAutor2 = "Fernando", apellidoAutor2 = "Bellido Pazos", emailUPMAutor2 = "f.bpazos@alumnos.upm.es")
 
 public class Pedido {
 	// Cï¿½DIGO DE APOYO
@@ -22,16 +16,21 @@ public class Pedido {
 
 	public Pedido(Cliente cliente, PlatoComida[] comidas, Restaurante restaurante) {
 		// TO-DO
+		// Asignamos los parametros a los atributos.
 		this.cliente = cliente;
 		this.comidas = comidas;
 		this.restaurante = restaurante;
 
+		// Como todavía no tenemos información sobre transporte y peso los inicializamos
+		// a null y 0 respectivamente.
 		this.transporte = null;
 		this.peso = 0;
-		
-		double res=0;
+
+		// Recorremos el array "comidas" sumando el precio de cada una de las comidas
+		// para calcular el importe total del pedido.
+		double res = 0;
 		for (int i = 0; i < comidas.length; i++) {
-			res+=comidas[i].getPrecio();
+			res += comidas[i].getPrecio();
 		}
 
 		this.importe = res;
@@ -40,6 +39,8 @@ public class Pedido {
 	public double getPeso() {
 
 		// TO-DO
+		// Sumamos el peso de cada comida del array "comidas" para devolver el peso
+		// total del pedido.
 		double res = 0;
 		for (int i = 0; i < comidas.length; i++) {
 			res = res + comidas[i].getPeso();
@@ -50,8 +51,11 @@ public class Pedido {
 	public double coste(Transporte transporte) {
 
 		// TO-DO
-
-		return (transporte.coste(cliente.getCodigo()) + importe + transporte.coste(restaurante.getCodigo(), cliente.getCodigo()));
+		// Calculamos el coste total sumando el importe de la comida y el del
+		// desplazamiento, primero hasta el restaurante, y luego del restaurante al
+		// cliente.
+		return (transporte.coste(restaurante.getCodigo()) + importe
+				+ transporte.coste(restaurante.getCodigo(), cliente.getCodigo()));
 	}
 
 	// Cï¿½DIGO DE APOYO
