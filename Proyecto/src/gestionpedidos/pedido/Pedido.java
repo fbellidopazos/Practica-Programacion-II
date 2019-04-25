@@ -18,19 +18,19 @@ public class Pedido {
 		// TO-DO
 		// Asignamos los parametros a los atributos.
 		this.cliente = cliente;
+
+		//Inicializamos el atributo "comidas" con los valores del array pasado "comida".
 		this.comidas = new PlatoComida[comidas.length];
-		//Si se hace forloop no salta
 		for (int i = 0; i < comidas.length; i++) {
-			this.comidas[i]=comidas[i];
-			
+			this.comidas[i] = comidas[i];
+
 		}
-		
+
 		this.restaurante = restaurante;
 
-		// Como todavía no tenemos información sobre transporte y peso los inicializamos
+		// Como todavï¿½a no tenemos informaciï¿½n sobre transporte y peso los inicializamos
 		// a null y 0 respectivamente.
 		this.transporte = null;
-		
 
 		double res = 0;
 		for (int i = 0; i < comidas.length; i++) {
@@ -52,7 +52,7 @@ public class Pedido {
 		// TO-DO
 		// Sumamos el peso de cada comida del array "comidas" para devolver el peso
 		// total del pedido.
-		
+
 		return peso;
 	}
 

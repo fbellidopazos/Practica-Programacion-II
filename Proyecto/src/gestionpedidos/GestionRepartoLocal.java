@@ -152,12 +152,10 @@ public class GestionRepartoLocal {
 			else {
 				// Buscamos el Minimo de las motos bajo el parametro COSTE O(n)
 				
-				
-				
-				//Editarlo era para que funcionase
 				Moto minimaMoto=(Moto)getMinimo(pedido, motosDisponibles);
 				pedido.setTransporte(minimaMoto);
 				motosDisponibles.remove(minimaMoto);
+				
 
 			}
 
@@ -173,6 +171,7 @@ public class GestionRepartoLocal {
 				Furgoneta minimaFurgoneta=(Furgoneta)getMinimo(pedido, furgonetasDisponibles);
 				pedido.setTransporte(minimaFurgoneta);
 				furgonetasDisponibles.remove(minimaFurgoneta);
+				
 			}
 		}
 
@@ -181,7 +180,7 @@ public class GestionRepartoLocal {
 	// PRE: el pedido tiene asignado un transporte
 	/*
 	 * miramos si el transporte del pedido tiene una moto o una furgonte(Solo hay
-	 * dos posibilidades segun la precondicion dada) luego añadimos miramos si los
+	 * dos posibilidades segun la precondicion dada) luego aï¿½adimos miramos si los
 	 * pedidos esperando estan vacios si es asi los metemos en disponibles si no
 	 * hacemos settransporte
 	 */
