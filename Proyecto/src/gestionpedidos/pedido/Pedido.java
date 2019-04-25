@@ -18,22 +18,33 @@ public class Pedido {
 		// TO-DO
 		// Asignamos los parametros a los atributos.
 		this.cliente = cliente;
-		this.comidas = comidas;
+		this.comidas = new PlatoComida[comidas.length];
+		//Si se hace forloop no salta
+		for (int i = 0; i < comidas.length; i++) {
+			this.comidas[i]=comidas[i];
+			
+		}
+		
 		this.restaurante = restaurante;
 
 		// Como todavía no tenemos información sobre transporte y peso los inicializamos
 		// a null y 0 respectivamente.
 		this.transporte = null;
-		this.peso = 0;
+		
 
-		// Recorremos el array "comidas" sumando el precio de cada una de las comidas
-		// para calcular el importe total del pedido.
 		double res = 0;
 		for (int i = 0; i < comidas.length; i++) {
-			res += comidas[i].getPrecio();
+			res = res + comidas[i].getPeso();
+		}
+		peso = res;
+		// Recorremos el array "comidas" sumando el precio de cada una de las comidas
+		// para calcular el importe total del pedido.
+		double res2 = 0;
+		for (int i = 0; i < comidas.length; i++) {
+			res2 += comidas[i].getPrecio();
 		}
 
-		this.importe = res;
+		this.importe = res2;
 	}
 
 	public double getPeso() {
@@ -41,11 +52,8 @@ public class Pedido {
 		// TO-DO
 		// Sumamos el peso de cada comida del array "comidas" para devolver el peso
 		// total del pedido.
-		double res = 0;
-		for (int i = 0; i < comidas.length; i++) {
-			res = res + comidas[i].getPeso();
-		}
-		return res;
+		
+		return peso;
 	}
 
 	public double coste(Transporte transporte) {

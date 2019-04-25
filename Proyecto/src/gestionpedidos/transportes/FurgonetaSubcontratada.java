@@ -16,6 +16,7 @@ public class FurgonetaSubcontratada extends Furgoneta {
 	 * Si la tara de la clase es menor a 1000 No añadimos mas valor , en caso
 	 * contrario aumentamos el valor un 10% mas
 	 */
+	@Override
 	public double coste(String codPosOrigen, String codPosDestino) {
 		double res;
 		if (super.getTara() < 1000)
@@ -25,7 +26,7 @@ public class FurgonetaSubcontratada extends Furgoneta {
 
 		return res;
 	}
-
+	@Override
 	public double coste(String codPosDestino) {
 		// Calcula el coste que supone ir desde la posición donde se encuntra el
 		// transporte hasta otra pasada como parámetro

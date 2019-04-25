@@ -53,27 +53,27 @@ public class GestionReparto {
 	public void addTransporteLocalidad(Transporte transporte) {
 		// TO-DO
 
-		double MaxCoordX = mapa.getMaxCoordX();
-		double MaxCoordY = mapa.getMaxCoordY();
-		double coordTransX = mapa.getPosicion(transporte.getCodigo()).getX();
-		double coordTransY = mapa.getPosicion(transporte.getCodigo()).getY();
+		double maxcoordx = mapa.getMaxCoordX();
+		double maxcoordy = mapa.getMaxCoordY();
+		double coordtranspx = mapa.getPosicion(transporte.getCodigo()).getX();
+		double coordtranspy = mapa.getPosicion(transporte.getCodigo()).getY();
 
 		// Comprobamos si es una coordenada v�lida
-		if (coordTransY >= 0 && coordTransX >= 0 && coordTransY <= MaxCoordY && coordTransX <= MaxCoordX) {
+		if (coordtranspy >= 0 && coordtranspx >= 0 && coordtranspy <= maxcoordy && coordtranspx <= maxcoordx) {
 
 			//
-			if (coordTransX <= MaxCoordX / 2) {
+			if (coordtranspx <= maxcoordx / 2) {
 
 				// Zona 0: X  [0, maxCoordX/2] Y  [0, maxCoordY/2]
-				if (coordTransY <= MaxCoordY / 2)
+				if (coordtranspy <= maxcoordy / 2)
 					gestoresLocales[0].add(transporte);
 
 				// Zona 1: X  [0, maxCoordX/2] Y  [maxCoordY/2 + 1, maxCoordY]
 				else {
 					gestoresLocales[1].add(transporte);
 				}
-			} else if (coordTransX > MaxCoordX / 2) {
-				if (coordTransY <= MaxCoordY / 2)
+			} else if (coordtranspx > maxcoordx / 2) {
+				if (coordtranspy <= maxcoordy / 2)
 					// Zona 2: X  [maxCoordX/2 + 1, maxCoordX] Y  [0, maxCoordY/2]
 					gestoresLocales[2].add(transporte);
 				else {
@@ -93,27 +93,29 @@ public class GestionReparto {
 	 */
 	public void asignarPedido(Pedido pedido) {
 
-		int MaxCoordX = mapa.getMaxCoordX();
-		int MaxCoordY = mapa.getMaxCoordY();
-		int coordTransX = mapa.getPosicion(pedido.getRestaurante().getCodigo()).getX();
-		int coordTransY = mapa.getPosicion(pedido.getRestaurante().getCodigo()).getY();
+		
+		
+		double maxcoordx = mapa.getMaxCoordX();
+		double maxcoordy = mapa.getMaxCoordY();
+		double coordpedx = mapa.getPosicion(pedido.getRestaurante().getCodigo()).getX();
+		double coordpedy = mapa.getPosicion(pedido.getRestaurante().getCodigo()).getY();
 
 		// Comprobamos si es una coordenada v�lida
-		if (coordTransY >= 0 && coordTransX >= 0 && coordTransY <= MaxCoordY && coordTransX <= MaxCoordX) {
+		if (coordpedy >= 0 && coordpedx >= 0 && coordpedy <= maxcoordy && coordpedx <= maxcoordx) {
 
 			//
-			if (coordTransX <= MaxCoordX / 2) {
+			if (coordpedx <= maxcoordx / 2) {
 
 				// Zona 0: X  [0, maxCoordX/2] Y  [0, maxCoordY/2]
-				if (coordTransY <= MaxCoordY / 2)
+				if (coordpedy <= maxcoordy / 2)
 					gestoresLocales[0].asignarPedido(pedido);
 
 				// Zona 1: X  [0, maxCoordX/2] Y  [maxCoordY/2 + 1, maxCoordY]
 				else {
 					gestoresLocales[1].asignarPedido(pedido);
 				}
-			} else if (coordTransX > MaxCoordX / 2) {
-				if (coordTransY <= MaxCoordY / 2)
+			} else if (coordpedx > maxcoordx / 2) {
+				if (coordpedy <= maxcoordy / 2)
 					// Zona 2: X  [maxCoordX/2 + 1, maxCoordX] Y  [0, maxCoordY/2]
 					gestoresLocales[2].asignarPedido(pedido);
 				else {
@@ -123,6 +125,7 @@ public class GestionReparto {
 			}
 		}
 
+	
 	}
 
 	// PRE: el pedido tiene asignado un transporte
@@ -132,26 +135,29 @@ public class GestionReparto {
 	 * subzoneando las localidades y notificamos el pedido
 	 */
 	public void notificarEntregaPedido(Pedido pedido) {
-		int MaxCoordX = mapa.getMaxCoordX();
-		int MaxCoordY = mapa.getMaxCoordY();
-		int coordTransX = mapa.getPosicion(pedido.getTransporte().getCodigo()).getX();
-		int coordTransY = mapa.getPosicion(pedido.getTransporte().getCodigo()).getY();
+		
+		double maxcoordx = mapa.getMaxCoordX();
+		double maxcoordy = mapa.getMaxCoordY();
+		double coordtranspx = mapa.getPosicion(pedido.getTransporte().getCodigo()).getX();
+		double coordtranspy =  mapa.getPosicion(pedido.getTransporte().getCodigo()).getY();
+		
+		
 
-		if (coordTransY >= 0 && coordTransX >= 0 && coordTransY <= MaxCoordY && coordTransX <= MaxCoordX) {
+		if (coordtranspy >= 0 && coordtranspx >= 0 && coordtranspy <= maxcoordy && coordtranspx <= maxcoordx) {
 
 			// Comprobamos si es una coordenada v�lida
-			if (coordTransX <= MaxCoordX / 2) {
+			if (coordtranspx <= maxcoordx / 2) {
 
 				// Zona 0: X  [0, maxCoordX/2] Y  [0, maxCoordY/2]
-				if (coordTransY <= MaxCoordY / 2)
+				if (coordtranspy <= maxcoordy / 2)
 					gestoresLocales[0].notificarEntregaPedido(pedido);
 
 				// Zona 1: X  [0, maxCoordX/2] Y  [maxCoordY/2 + 1, maxCoordY]
 				else {
 					gestoresLocales[1].notificarEntregaPedido(pedido);
 				}
-			} else if (coordTransX > MaxCoordX / 2) {
-				if (coordTransY <= MaxCoordY / 2)
+			} else if (coordtranspx > maxcoordx / 2) {
+				if (coordtranspy <= maxcoordy / 2)
 					// Zona 2: X  [maxCoordX/2 + 1, maxCoordX] Y  [0, maxCoordY/2]
 					gestoresLocales[2].notificarEntregaPedido(pedido);
 				else {

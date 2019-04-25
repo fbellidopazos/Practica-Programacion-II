@@ -14,7 +14,7 @@ public class FurgonetaPropia extends Furgoneta {
 		super(codigo, mapa, tara);
 
 	}
-
+	@Override
 	public double coste(String codPosOrigen, String codPosDestino) {
 		// Calculamos el coste desde una posición origen a otra destino pasadas como
 		// parámetros.
@@ -27,7 +27,7 @@ public class FurgonetaPropia extends Furgoneta {
 		return res;
 
 	}
-
+	@Override
 	public double coste(String codPosDestino) {
 		// Calculamos el coste desde la posición donde se encuentra el transporte hasta
 		// una posición destino pasada como parámetro.

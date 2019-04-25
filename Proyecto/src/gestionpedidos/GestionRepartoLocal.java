@@ -123,6 +123,19 @@ public class GestionRepartoLocal {
 			furgonetasDisponibles.add(furgonetasDisponibles.size(), (Furgoneta) transporte);
 
 	}
+	
+	private Transporte getMinimo(Pedido pedido,ArrayList<? extends Transporte> transporteDisponible) {
+		
+		Transporte minimoTransporte = transporteDisponible.get(0);
+		for (int i = 1; i < transporteDisponible.size(); i++) {
+			if (pedido.coste(minimoTransporte) > pedido.coste(transporteDisponible.get(i))) {
+				minimoTransporte = transporteDisponible.get(i);
+			}
+
+		}
+		return minimoTransporte;
+		
+	}
 
 	// PRE: el pedido no tiene asignado ningï¿½n transporte
 	/*
@@ -138,14 +151,11 @@ public class GestionRepartoLocal {
 				pedidosEsperandoMoto.add(pedido);
 			else {
 				// Buscamos el Minimo de las motos bajo el parametro COSTE O(n)
-				Moto minimaMoto = motosDisponibles.get(0);
-				for (int i = 1; i < motosDisponibles.size(); i++) {
-					if (pedido.coste(minimaMoto) > pedido.coste(motosDisponibles.get(i))) {
-						minimaMoto = motosDisponibles.get(i);
-					}
-
-				}
-
+				
+				
+				
+				//Editarlo era para que funcionase
+				Moto minimaMoto=(Moto)getMinimo(pedido, motosDisponibles);
 				pedido.setTransporte(minimaMoto);
 				motosDisponibles.remove(minimaMoto);
 
@@ -157,15 +167,10 @@ public class GestionRepartoLocal {
 			if (furgonetasDisponibles.size() == 0)
 				pedidosEsperandoFurgoneta.add(pedido);
 			else {
+				//Editarlo era para que funcionase
+
 				// Buscamos el Minimo de las Furgonetas bajo el parametro COSTE O(n)
-				Furgoneta minimaFurgoneta = furgonetasDisponibles.get(0);
-				for (int i = 1; i < furgonetasDisponibles.size(); i++) {
-					if (pedido.coste(minimaFurgoneta) > pedido.coste(furgonetasDisponibles.get(i))) {
-						minimaFurgoneta = furgonetasDisponibles.get(i);
-					}
-
-				}
-
+				Furgoneta minimaFurgoneta=(Furgoneta)getMinimo(pedido, furgonetasDisponibles);
 				pedido.setTransporte(minimaFurgoneta);
 				furgonetasDisponibles.remove(minimaFurgoneta);
 			}

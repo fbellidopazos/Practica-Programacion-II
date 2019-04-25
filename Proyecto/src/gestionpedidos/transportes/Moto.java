@@ -13,13 +13,14 @@ public class Moto extends Transporte {
 	public Moto(String codigo, Mapa mapa) {
 		// double eurosPKm
 		super(codigo, mapa);
-		// this.eurosPKm=eurosPKm;
+		
 	}
 
 	/*
 	 * Calculamos precio para ir desde donde esta la moto hasta el lugar
 	 * correspondiente
 	 */
+	@Override
 	public double coste(String codPosDestino) {
 		return (super.getMapa().distancia(super.getCodigo(), codPosDestino) * eurosPKm);
 	}
@@ -27,6 +28,7 @@ public class Moto extends Transporte {
 	/*
 	 * Calculamos precio para ir desde lugar dado hasta el destino dado
 	 */
+	@Override
 	public double coste(String codPosOrigen, String codPosDestino) {
 		return (super.getMapa().distancia(codPosOrigen, codPosDestino) * eurosPKm);
 	}
