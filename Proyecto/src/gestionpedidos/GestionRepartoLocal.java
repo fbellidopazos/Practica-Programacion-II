@@ -168,7 +168,7 @@ public class GestionRepartoLocal {
 				pedidosEsperandoFurgoneta.add(pedido);
 			else {
 				//Editarlo era para que funcionase
-
+				
 				// Buscamos el Minimo de las Furgonetas bajo el parametro COSTE O(n)
 				Furgoneta minimaFurgoneta=(Furgoneta)getMinimo(pedido, furgonetasDisponibles);
 				pedido.setTransporte(minimaFurgoneta);

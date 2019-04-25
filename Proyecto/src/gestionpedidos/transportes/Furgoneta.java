@@ -20,7 +20,7 @@ public abstract class Furgoneta extends Transporte {
 		return tara;
 	}
 
-	
+	@Override
 	public abstract double coste(String codPosOrigen, String codPosDestino);
 	// Calculamos el precio para ir de una posición origen hasta el destino.
 
