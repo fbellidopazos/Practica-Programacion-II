@@ -44,6 +44,7 @@ public class PosicionXY {
 		return (y == other.y);			
 	}
 	
+	@Override
 	public String toString(){
 		return "("+x+","+y+")";
 	}

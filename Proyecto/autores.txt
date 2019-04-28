@@ -9,7 +9,7 @@ import anotacion.Programacion2;
 
 @Programacion2 (
 		nombreAutor1 = "Sara",
-		apellidoAutor1 = "Alonso Fernández",
+		apellidoAutor1 = "Alonso Fernandez",
 		emailUPMAutor1 = "sara.alonso.fernandez@alumnos.upm.es",
 		nombreAutor2 = "Fernando",
 		apellidoAutor2 = "Bellido Pazos", 

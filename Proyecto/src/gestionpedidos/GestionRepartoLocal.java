@@ -117,15 +117,16 @@ public class GestionRepartoLocal {
 	 */
 	public void add(Transporte transporte) {
 		// TO-DO
+
 		if (transporte instanceof Moto)
 			motosDisponibles.add(motosDisponibles.size(), (Moto) transporte);
 		if (transporte instanceof Furgoneta)
 			furgonetasDisponibles.add(furgonetasDisponibles.size(), (Furgoneta) transporte);
 
 	}
-	
-	private Transporte getMinimo(Pedido pedido,ArrayList<? extends Transporte> transporteDisponible) {
-		
+
+	private Transporte getMinimo(Pedido pedido, ArrayList<? extends Transporte> transporteDisponible) {
+
 		Transporte minimoTransporte = transporteDisponible.get(0);
 		for (int i = 1; i < transporteDisponible.size(); i++) {
 			if (pedido.coste(minimoTransporte) > pedido.coste(transporteDisponible.get(i))) {
@@ -134,7 +135,7 @@ public class GestionRepartoLocal {
 
 		}
 		return minimoTransporte;
-		
+
 	}
 
 	// PRE: el pedido no tiene asignado ningï¿½n transporte
@@ -146,35 +147,28 @@ public class GestionRepartoLocal {
 	public void asignarPedido(Pedido pedido) {
 
 		// TO-DO
-		if (pedido.getPeso() <= PESOMAXMOTO) {
-			if (motosDisponibles.size() == 0)
-				pedidosEsperandoMoto.add(pedido);
-			else {
-				// Buscamos el Minimo de las motos bajo el parametro COSTE O(n)
-				
-				Moto minimaMoto=(Moto)getMinimo(pedido, motosDisponibles);
-				pedido.setTransporte(minimaMoto);
-				motosDisponibles.remove(minimaMoto);
-				
+		if (pedido.getPeso() <= PESOMAXMOTO && motosDisponibles.size() == 0) {
+			pedidosEsperandoMoto.add(pedido);
+		} else if (pedido.getPeso() <= PESOMAXMOTO) {
+			// Buscamos el Minimo de las motos bajo el parametro COSTE O(n)
 
-			}
-
+			Moto minimaMoto = (Moto) getMinimo(pedido, motosDisponibles);
+			pedido.setTransporte(minimaMoto);
+			motosDisponibles.remove(minimaMoto);
 		}
+
+		else if (furgonetasDisponibles.size() == 0)
+			pedidosEsperandoFurgoneta.add(pedido);
 
 		else {
-			if (furgonetasDisponibles.size() == 0)
-				pedidosEsperandoFurgoneta.add(pedido);
-			else {
-				//Editarlo era para que funcionase
-				
-				// Buscamos el Minimo de las Furgonetas bajo el parametro COSTE O(n)
-				Furgoneta minimaFurgoneta=(Furgoneta)getMinimo(pedido, furgonetasDisponibles);
-				pedido.setTransporte(minimaFurgoneta);
-				furgonetasDisponibles.remove(minimaFurgoneta);
-				
-			}
-		}
+			// Editarlo era para que funcionase
 
+			// Buscamos el Minimo de las Furgonetas bajo el parametro COSTE O(n)
+			Furgoneta minimaFurgoneta = (Furgoneta) getMinimo(pedido, furgonetasDisponibles);
+			pedido.setTransporte(minimaFurgoneta);
+			furgonetasDisponibles.remove(minimaFurgoneta);
+
+		}
 	}
 
 	// PRE: el pedido tiene asignado un transporte
@@ -186,17 +180,15 @@ public class GestionRepartoLocal {
 	 */
 	public void notificarEntregaPedido(Pedido pedido) {
 		// TO-DO
-		if (pedido.getTransporte() instanceof Moto) {
-			if (pedidosEsperandoMoto.isEmpty())
-				motosDisponibles.add(motosDisponibles.size(), (Moto) pedido.getTransporte());
-			else
-				pedidosEsperandoMoto.poll().setTransporte(pedido.getTransporte());
-		} else {
-			if (pedidosEsperandoFurgoneta.isEmpty())
-				furgonetasDisponibles.add(furgonetasDisponibles.size(), (Furgoneta) pedido.getTransporte());
-			else
-				pedidosEsperandoFurgoneta.poll().setTransporte(pedido.getTransporte());
-		}
+		if (pedido.getTransporte() instanceof Moto && pedidosEsperandoMoto.isEmpty())
+			motosDisponibles.add(motosDisponibles.size(), (Moto) pedido.getTransporte());
+		else if (pedido.getTransporte() instanceof Moto)
+			pedidosEsperandoMoto.poll().setTransporte(pedido.getTransporte());
+
+		else if (pedidosEsperandoFurgoneta.isEmpty())
+			furgonetasDisponibles.add(furgonetasDisponibles.size(), (Furgoneta) pedido.getTransporte());
+		else
+			pedidosEsperandoFurgoneta.poll().setTransporte(pedido.getTransporte());
 
 	}
 }

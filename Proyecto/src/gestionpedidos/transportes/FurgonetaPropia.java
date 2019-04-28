@@ -14,30 +14,29 @@ public class FurgonetaPropia extends Furgoneta {
 		super(codigo, mapa, tara);
 
 	}
+
 	@Override
 	public double coste(String codPosOrigen, String codPosDestino) {
-		// Calculamos el coste desde una posición origen a otra destino pasadas como
-		// parámetros.
+		// Calculamos el coste desde una posiciï¿½n origen a otra destino pasadas como
+		// parï¿½metros.
 		double res;
-		if (super.getTara() < 500)
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia);
-		else
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia * 1.10);
+		res = super.getTara() < 500
+				? super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia)
+				: super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia * 1.10);
 
 		return res;
 
 	}
+
 	@Override
 	public double coste(String codPosDestino) {
-		// Calculamos el coste desde la posición donde se encuentra el transporte hasta
-		// una posición destino pasada como parámetro.
+		// Calculamos el coste desde la posiciï¿½n donde se encuentra el transporte hasta
+		// una posiciï¿½n destino pasada como parï¿½metro.
 		String codPosOrigen = super.getCodigo();
 		double res;
-		if (super.getTara() < 500)
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia);
-		else
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia * 1.10);
-
+		res = super.getTara() < 500
+				? super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia)
+				: super.getMapa().distancia(codPosOrigen, codPosDestino) * (EUROS_P_HORA / velocidadMedia * 1.10);
 		return res;
 
 	}

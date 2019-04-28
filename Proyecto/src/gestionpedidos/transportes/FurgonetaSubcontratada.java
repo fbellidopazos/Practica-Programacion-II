@@ -9,33 +9,31 @@ public class FurgonetaSubcontratada extends Furgoneta {
 
 	public FurgonetaSubcontratada(String codigo, Mapa mapa, double tara) {
 		super(codigo, mapa, tara);
-	
+
 	}
 
 	/*
-	 * Si la tara de la clase es menor a 1000 No añadimos mas valor , en caso
+	 * Si la tara de la clase es menor a 1000 No aï¿½adimos mas valor , en caso
 	 * contrario aumentamos el valor un 10% mas
 	 */
 	@Override
 	public double coste(String codPosOrigen, String codPosDestino) {
 		double res;
-		if (super.getTara() < 1000)
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * eurosPKm;
-		else
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * (eurosPKm * 1.10);
+		res = super.getTara() < 1000 ? super.getMapa().distancia(codPosOrigen, codPosDestino) * eurosPKm
+				: super.getMapa().distancia(codPosOrigen, codPosDestino) * (eurosPKm * 1.10);
 
 		return res;
 	}
+
 	@Override
 	public double coste(String codPosDestino) {
-		// Calcula el coste que supone ir desde la posición donde se encuntra el
-		// transporte hasta otra pasada como parámetro
+		// Calcula el coste que supone ir desde la posiciï¿½n donde se encuntra el
+		// transporte hasta otra pasada como parï¿½metro
 		double res;
 		String codPosOrigen = super.getCodigo();
-		if (super.getTara() < 1000)
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * eurosPKm;
-		else
-			res = super.getMapa().distancia(codPosOrigen, codPosDestino) * (eurosPKm * 1.10);
+
+		res = super.getTara() < 1000 ? super.getMapa().distancia(codPosOrigen, codPosDestino) * eurosPKm
+				: super.getMapa().distancia(codPosOrigen, codPosDestino) * (eurosPKm * 1.10);
 
 		return res;
 	}

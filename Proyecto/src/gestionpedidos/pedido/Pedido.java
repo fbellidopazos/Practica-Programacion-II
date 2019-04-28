@@ -19,11 +19,14 @@ public class Pedido {
 		// Asignamos los parametros a los atributos.
 		this.cliente = cliente;
 
-		//Inicializamos el atributo "comidas" con los valores del array pasado "comida".
+		// Inicializamos el atributo "comidas" con los valores del array pasado
+		// "comida".
 		this.comidas = new PlatoComida[comidas.length];
-		for (int i = 0; i < comidas.length; i++) {
-			this.comidas[i] = comidas[i];
 
+		for (int i = 0; i < this.comidas.length; i++) {
+
+			this.peso = this.peso + comidas[i].getPeso();
+			this.importe += comidas[i].getPrecio();
 		}
 
 		this.restaurante = restaurante;
@@ -32,19 +35,9 @@ public class Pedido {
 		// a null y 0 respectivamente.
 		this.transporte = null;
 
-		double res = 0;
-		for (int i = 0; i < comidas.length; i++) {
-			res = res + comidas[i].getPeso();
-		}
-		peso = res;
 		// Recorremos el array "comidas" sumando el precio de cada una de las comidas
 		// para calcular el importe total del pedido.
-		double res2 = 0;
-		for (int i = 0; i < comidas.length; i++) {
-			res2 += comidas[i].getPrecio();
-		}
 
-		this.importe = res2;
 	}
 
 	public double getPeso() {
