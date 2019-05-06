@@ -18,11 +18,11 @@
 ### Saros
 	+ En eclipse Help(Meu superior) > Install New Software
 	+ Insertar Link http://dpp.sourceforge.net/update/ y pinchar en Add 
-	+ Añadir nombre y pinchar en add 
-	+ Aparecera un paquete en una pequeña ventana abajo seleccionarlo y next todo el rato y aceptar terminos
+	+ AÃ±adir nombre y pinchar en add 
+	+ Aparecera un paquete en una pequeÃ±a ventana abajo seleccionarlo y next todo el rato y aceptar terminos
 	+ Reinciar Eclipse(El programa lo pide)
 	+ Registrarse en https://saros-con.imp.fu-berlin.de:5280/register/new
-	+ En eclipse pinchar en Saros(menu superior) add account insertar el usuario y contraseña y fin
+	+ En eclipse pinchar en Saros(menu superior) add account insertar el usuario y contraseÃ±a y fin
 ### Trucos Eclipse (OPCIONALES)
 	+ Window(Menu superior) > Preferences > Buscar "Keys" > Buscar "commit" > Asingar combnacion de teclas
 	+ Lo mismo con "pull" (Es el primero de la lista que aparece)
@@ -40,39 +40,39 @@
 	
 
 ## TO-DO List
-1. [ ] Paquete gestionpedidos
-   1. [ ] GestionReparto
-      1. [ ] GestionReparto(Constructor)
-      1. [ ] addTransporteLocalidad
-      1. [ ] asignarPedido
-      1. [ ] notificarEntregaPedido
-   1. [ ] GestionRepartoLocal
-      1. [ ] add
-      1. [ ] asignarPedido
-      1. [ ] notificarEntregaPedido
+1. [X] Paquete gestionpedidos
+   1. [X] GestionReparto
+      1. [X] GestionReparto(Constructor)
+      1. [X] addTransporteLocalidad
+      1. [X] asignarPedido
+      1. [X] notificarEntregaPedido
+   1. [X] GestionRepartoLocal
+      1. [X] add
+      1. [X] asignarPedido
+      1. [X] notificarEntregaPedido
 1. [x] Paquete gestionpedidos.mapa
-1. [ ] Paquete gestionpedidos.pedido
-   1. [ ] Pedido
-      1. [ ] Pedido(Constructor)
-      1. [ ] getPeso
-      1. [ ] coste          
-1. [ ] Paquete gestionpedidos.transporte
-   1. [ ] Transporte
-      1. [ ] Atributos
-      1. [ ] Metodos
-   1. [ ] Moto
-      1. [ ] Atributos
-      1. [ ] Metodos
-   1. [ ] Furgoneta
-      1. [ ] Atributos
-      1. [ ] Metodos
-   1. [ ] FurgonetaPropia
-      1. [ ] Atributos
-      1. [ ] Metodos
-   1. [ ] FurgonetaSubcontratada
-      1. [ ] Atributos
-      1. [ ] Metodos 
-1. [ ] JUnit Correcto 
+1. [X] Paquete gestionpedidos.pedido
+   1. [X] Pedido
+      1. [X] Pedido(Constructor)
+      1. [X] getPeso
+      1. [X] coste          
+1. [X] Paquete gestionpedidos.transporte
+   1. [X] Transporte
+      1. [X] Atributos
+      1. [X] Metodos
+   1. [X] Moto
+      1. [X] Atributos
+      1. [X] Metodos
+   1. [X] Furgoneta
+      1. [X] Atributos
+      1. [X] Metodos
+   1. [X] FurgonetaPropia
+      1. [X] Atributos
+      1. [X] Metodos
+   1. [X] FurgonetaSubcontratada
+      1. [X] Atributos
+      1. [X] Metodos 
+1. [X] JUnit Correcto 
 
 
 ## Contenidos
