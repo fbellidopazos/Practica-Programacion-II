@@ -51,7 +51,7 @@ public abstract class PiezaAjedrez extends Pieza {
 	@Override
 	public boolean movimientoDentroLimites (int toFila, int toColumna) {
 		// Si toFila y toColumna esta entre 0 y 7 y Pieza(ClasePadre) su posición no es igual a la dada entonces TRUE
-		return(0<=toFila && toFila<=7 && 0<=toColumna && toColumna<=7 && toFila!=super.getFila() && toColumna!=super.getColumna()); 
+		return(0<=toFila && toFila<=7 && 0<=toColumna && toColumna<=7 && toFila!=super.getFila() && toColumna!=super.getColumna());  
 	} 
 	
 	
@@ -66,7 +66,7 @@ public abstract class PiezaAjedrez extends Pieza {
 	 * Se retorma false e.o.c.
 	 */
 	public boolean puedeMover (int toFila, char toColumna){
-		return false;
+		return (1<=toFila && toFila<=8 && 0<=(toColumna-97) && (toColumna-97)<=7);
 	}
 	
 	
@@ -144,7 +144,13 @@ public abstract class PiezaAjedrez extends Pieza {
 	 * @param incColumna incremento de la columna en cada interación
 	 */
 	protected void casillasVisitables (ArrayList<Casilla> resultado,int incFila, int incColumna){
-		//TODO
+		//itFila=Posicion(Fila)+incFila  incrementa 
+		//itColumna=Posicion(Fila)+incFila
+		//si EstaDentroLimites y queHay es null(NO hay pieza) -> añadimos a arraylist
+		for (int itFila = super.getFila()+incFila,itCol = super.getColumna()+incColumna; movimientoDentroLimites(itFila, itCol) && queHay(itFila,itCol)==null; itFila+=incFila,itCol+=incColumna) {
+			resultado.add(resultado.size(), new Casilla(itFila, itCol));
+		}
+		
 	}
 	
 	/**

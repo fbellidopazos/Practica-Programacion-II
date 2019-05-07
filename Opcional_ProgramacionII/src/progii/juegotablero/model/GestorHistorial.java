@@ -17,18 +17,19 @@ public class GestorHistorial {
 	/**
 	 * Pila con los movimientos a deshacer
 	 */
-	//TODO
+	Stack<Movimiento> pilaDeshacer;
 
 	/**
 	 * Pila con los movimientos a rehacer
 	 */
-	//TODO
+	Stack<Movimiento> pilaRehacer;
 	
 	/**
 	 * Crea e inicializa las pilas del gestor del historial
 	 */
 	public GestorHistorial() {
-		//TODO
+		pilaDeshacer=new Stack<Movimiento>();
+		pilaRehacer=new Stack<Movimiento>();
 	}
 	
 	/**
@@ -36,7 +37,10 @@ public class GestorHistorial {
 	 * @param movimiento Movimiento a guardar
 	 */
 	public void guardarMovimiento (Movimiento movimiento) {
-		//TODO
+		if(!pilaRehacer.isEmpty())
+			pilaRehacer.makeEmpty();
+		else
+			pilaDeshacer.push(movimiento);
 	}
 	
 	/**
@@ -45,7 +49,12 @@ public class GestorHistorial {
 	 * @throws MovimientoException En caso de que no haya movimientos que deshacer
 	 */
 	public Movimiento deshacer () throws MovimientoException {
-		//TODO
+		try {
+			Movimiento res=pilaDeshacer.pop();
+		} catch (EmptyStackException e) {
+			//si esta vacia lanza excepcion
+			throw new MovimientoException("No se puede deshacer porque no hay movimientos para deshacer");
+		}
 		return null; //Sentencia dummy 
 	}
 	
