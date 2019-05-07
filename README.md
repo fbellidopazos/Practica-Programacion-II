@@ -11,7 +11,7 @@
 	+ Arriba a la derecha bsucar Git Repositories (A la izquierda aparecera "view") y pinchar en el
 	+ En la nueva ventana que ha salido pinchar en Clone Repository insertar en URL https://github.com/fbellidopazos/Practica-Programacion-II
 	+ En el apartado de cuenta (En caso de necesitar crearse https://github.com/join?source=prompt-code , Usar Suscripcion gratuita) e insertarla 
-	+ Dar 2 veces a next
+	+ Dar next y seleccionar unicamente OPCIONAL-> Dar next una vez seleccionado
 	+ Opcional(En la nueva ventana se puede elegir donde se quiere que se guarde recomendacion en la misma carpeta del proyecto,aunque no afecta en nada) y next(Se acabara la instalacion aqui)
 	+ Para importar el proyecto desplegar el menu de Practica-Prog... y desplegar Working Tree
 		+ Click derecho en "Proyecto" import Projects (Elegir directorio) y terminar 
