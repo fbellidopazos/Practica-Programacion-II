@@ -14,7 +14,7 @@
 	+ Dar next y seleccionar unicamente OPCIONAL-> Dar next una vez seleccionado
 	+ Opcional(En la nueva ventana se puede elegir donde se quiere que se guarde recomendacion en la misma carpeta del proyecto,aunque no afecta en nada) y next(Se acabara la instalacion aqui)
 	+ Para importar el proyecto desplegar el menu de Practica-Prog... y desplegar Working Tree
-		+ Click derecho en "Proyecto" import Projects (Elegir directorio) y terminar 
+		+ Click derecho en "Opcional_ProgramacionII" import Projects (Elegir directorio) y terminar 
 ### Saros
 	+ En eclipse Help(Meu superior) > Install New Software
 	+ Insertar Link http://dpp.sourceforge.net/update/ y pinchar en Add 
