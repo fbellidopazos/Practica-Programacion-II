@@ -1,0 +1,2 @@
+@echo
+sonar-scanner.bat

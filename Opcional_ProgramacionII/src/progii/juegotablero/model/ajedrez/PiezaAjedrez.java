@@ -16,10 +16,10 @@ public abstract class PiezaAjedrez extends Pieza {
 	
 	private TipoPiezaAjedrez tipoPieza; 
 	/**
-	 * Se define un atributo de tipo función que permite consultar que pieza hay en la posición dada
-	 * La función debe cumplir con los siguientes requisitos:
-	 * 1º Recibe la fila y la columna siguiendo el criterio del ajedrez
-	 * 2º Debe retornar la pieza que hay en la posición indicada o null si no hay ninguna pieza
+	 * Se define un atributo de tipo funció que permite consultar que pieza hay en la posicióódada
+	 * La funciónóebe cumplir con los siguientes requisitos:
+	 * 1º Rcibe la fila y la columna siguiendo el criterio del ajedrez
+	 * 2º Dee retornar la pieza que hay en la posición indicada o null si no hay ninguna pieza
 	 */
 	private static BiFunction<Integer,Character,PiezaAjedrez> queHay = null;
 	
@@ -41,8 +41,8 @@ public abstract class PiezaAjedrez extends Pieza {
 	}
 
 	/**
-	 * Devuelve si la pieza puede mover a la posición (toFila,toColumna) habiendo o no contrario en dicha posición. 
-	 * Como esta clase no conoce el movimiento concreto de cada pieza, únicamente devolera true si la pieza
+	 * Devuelve si la pieza puede mover a la posición (toFilaóoColumna) habiendo o no contrario en dicha posición. 
+	 * Coó esta clase no conoce el movimiento concreto de cada pieza, únicamente dúolera true si lva áieza
 	 * no se sale del tablero o false si la pieza se sale del tablero.   
 	 * @param toFila Fila destino del movimiento 
 	 * @param toColumna Columna destino del movimiento
@@ -50,9 +50,9 @@ public abstract class PiezaAjedrez extends Pieza {
 	 */
 	@Override
 	public boolean movimientoDentroLimites (int toFila, int toColumna) {
-		//TODO
-		return false; //Sentencia dummy para que compile
-	}
+		// Si toFila y toColumna esta entre 0 y 7 y Pieza(ClasePadre) su posición no es igual a la dada entonces TRUE
+		return(0<=toFila && toFila<=7 && 0<=toColumna && toColumna<=7 && toFila!=super.getFila() && toColumna!=super.getColumna()); 
+	} 
 	
 	
 	/**
@@ -66,15 +66,14 @@ public abstract class PiezaAjedrez extends Pieza {
 	 * Se retorma false e.o.c.
 	 */
 	public boolean puedeMover (int toFila, char toColumna){
-		//TODO
 		return false;
 	}
 	
 	
 	/**
-	 * El método devuelve un String con formato: TIPOPIEZA_NOMBREJUGADOR. 
+	 * El método devuelve un Séing con formato: TIPOPIEZA_NOMBREJUGADOR. 
 	 * Por ejemplo, ALFIL_NEGRO. Para ello se usará <br> 
-	 * tipo de pieza y el nombre del jugador que se encuentra en la clase Pieza.    
+	 * tipo de áeza y el nombre del jugador que se encuentra en la clase Pieza.    
 	 */
 	@Override
 	public String toString() {
@@ -83,7 +82,7 @@ public abstract class PiezaAjedrez extends Pieza {
 	
 	/**
 	 * En el ajedrez la fila superior es la 8 y la inferior el 1
-	 * @return Este método retorna la fila en la que se encuentra la pieza según un tablero de ajedrez
+	 * @return Este método retorna la filaén la que se encuentra la pieza según un tablero de ajedrú
 	 */
 	public int getFilaAjedrez(){
 		return 8-super.getFila();
@@ -91,7 +90,7 @@ public abstract class PiezaAjedrez extends Pieza {
 	
 	/**
 	 * Las columnas en un tablero de ajedrez van de 'a' a 'h' siendo 'a' la columna que esstá más a la izquierda
-	 * @return retiorna la columna en la que se encuentra la pieza en un tablero de ajedrez
+ á@ráurn retiorna la columna en la que se encuentra la pieza en un tablero de ajedrez
 	 */
 	public char getColumnaAjedrez(){
 		return (char)(super.getColumna() + 'a');
@@ -102,7 +101,7 @@ public abstract class PiezaAjedrez extends Pieza {
 	}
 	
 	/**
-	 * Preugunta que hay en la posición dada siguiendo el criterio de posiciones del ajedrez
+	 * Preugunta que hay en la posición dada siguiendo el critóio de posiciones del ajedrez
 	 * @param fila fila que se quiere consultar de 8 (superior) a 1 (inferior)
 	 * @param columna columna que se quiere consultar de 'a' (izquierda) a 'h' (derecha)
 	 * @return retorna la pieza que hubiera o null
@@ -117,8 +116,8 @@ public abstract class PiezaAjedrez extends Pieza {
 	}
 	
 	/**
-	 * Preugunta que hay en la posición dada siguiendo el criterio de posiciones de una matriz (modelo interno aplicado para la implementación del juego)
-	 * @param fila fila que se quiere consultar de 0 (superior) a 7 (inferior)
+	 * Preugunta que hay en la posición dada siguiendo el criteóo de posiciones de una matriz (modelo interno aplicado para la implementación del juego)
+	 * @param fió fila que se quiere consultar de 0 (superior) a 7 (inferior)
 	 * @param columna columna que se quiere consultar de '0' (izquierda) a '7' (derecha)
 	 * @return retorna la pieza que hubiera o null
 	 */
