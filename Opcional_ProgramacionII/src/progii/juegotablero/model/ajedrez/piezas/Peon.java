@@ -1,20 +1,25 @@
 package progii.juegotablero.model.ajedrez.piezas;
 
-import progii.juegotablero.model.ajedrez.ArrayList;
-import progii.juegotablero.model.ajedrez.Casilla;
+import list.ArrayList;
+import progii.juegotablero.model.Jugador;
+import progii.juegotablero.model.Casilla;
 import progii.juegotablero.model.ajedrez.PiezaAjedrez;
+import progii.juegotablero.model.ajedrez.TipoPiezaAjedrez;
 
-public class Peon extends PiezaAjedrez{
-	public public Peon(Jugador jugador, int fila, char columna) {
-		super(jugador, tipoPiezaAjedrez.PEON, fila, columna);
+public class Peon extends PiezaAjedrez {
+	public Peon(Jugador jugador, int fila, char columna) {
+		super(jugador, TipoPiezaAjedrez.PEON, fila, columna);
 	}
-	
+
 	@Override
 	public ArrayList<Casilla> movimientosValidos() {
-		ArrayList<Casilla> resultado resultado= new ArrayList<Casilla>();
-		
-		casillasVisitables(resultado, 0, 1);
-		
+		ArrayList<Casilla> resultado = new ArrayList<>();
+
+		casillasVisitables(resultado, 1, 1);
+		casillasVisitables(resultado, -1, 1);
+		casillasVisitables(resultado, -1, -1);
+		casillasVisitables(resultado, 1, -1);
+
 		return resultado;
 	}
 }
