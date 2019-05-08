@@ -14,7 +14,6 @@ public class Alfil extends PiezaAjedrez{
 	@Override
 	public ArrayList<Casilla> movimientosValidos() {
 		ArrayList<Casilla> resultado = new ArrayList<>();
-		
 		casillasVisitables(resultado, 1, 1);
 		casillasVisitables(resultado, -1, 1);
 		casillasVisitables(resultado, -1, -1);

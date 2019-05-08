@@ -2,5 +2,5 @@ projectKey=Opcional_ProgramacionII
 serverUrl=http://localhost:9000
 serverVersion=7.7.0.23042
 dashboardUrl=http://localhost:9000/dashboard?id=Opcional_ProgramacionII
-ceTaskId=AWqT3ZcNrAbPrmQksV6T
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWqT3ZcNrAbPrmQksV6T
+ceTaskId=AWqY1_dys2ZgwcR0niIb
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWqY1_dys2ZgwcR0niIb
