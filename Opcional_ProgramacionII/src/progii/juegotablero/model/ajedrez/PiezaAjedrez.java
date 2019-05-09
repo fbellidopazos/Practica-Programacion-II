@@ -167,7 +167,6 @@ public abstract class PiezaAjedrez extends Pieza {
 	protected void casillasVisitables(ArrayList<Casilla> resultado, int incFila, int incColumna) {
 		// itFila=Posicion(Fila)+incFila incrementa
 		// itColumna=Posicion(Fila)+incFila
-		// si EstaDentroLimites y queHay es null(NO hay pieza) -> añadimos a arraylist
 		boolean condition = true;
 
 		for (int itFila = this.getFila() + incFila, itCol = this.getColumna()

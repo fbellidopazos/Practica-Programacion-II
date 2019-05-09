@@ -48,14 +48,16 @@ public class GestorHistorial {
 	 * @throws MovimientoException En caso de que no haya movimientos que deshacer
 	 */
 	public Movimiento deshacer() throws MovimientoException {
-		Movimiento resMovimiento;
+		 
 		try {
-			resMovimiento= pilaDeshacer.pop();
+			Movimiento resMovimiento= pilaDeshacer.pop();
+			pilaRehacer.push(resMovimiento);
+			return resMovimiento;
 		} catch (EmptyStackException e) {
 			// si esta vacia lanza excepcion
 			throw new MovimientoException("No se puede deshacer porque no hay movimientos para deshacer");
 		}
-		return resMovimiento;
+		
 	}
 
 	/**

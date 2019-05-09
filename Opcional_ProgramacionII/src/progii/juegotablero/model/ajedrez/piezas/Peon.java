@@ -21,7 +21,7 @@ public class Peon extends PiezaAjedrez {
 			movements(resultado, 1);
 			movements(resultado, 2);
 			addDiagonals(resultado,1);
-			addDiagonals(resultado, 2);
+			
 			start=false;
 		}
 		else {
@@ -52,14 +52,16 @@ public class Peon extends PiezaAjedrez {
 	}
 	private void diagonal(int i,int j,ArrayList<Casilla> resultado) {
 		// si i<Fila (Es negra ya que restamos -1)--> Si en la posicion hay una ficha--> Es esa ficha de distinto color al jugador
-		if(i<this.getFila() && queHay(i, j)!=null && queHay(i, j).getJugador().getId()!=ControlJugadoresAjedrez.NEGRO)
-			casillaVisitable(resultado, i, j);
-		// si i<Fila (Es negra ya que sumamos 1)--> Si en la posicion hay una ficha--> Es esa ficha de distinto color al jugador
-		else if (i>this.getFila() && queHay(i, j)!=null && queHay(i, j).getJugador().getId()!=ControlJugadoresAjedrez.BLANCO) 
+		if(i<this.getFila() && queHay(i, j)!=null && queHay(i, j).getJugador().getId()!=ControlJugadoresAjedrez.NEGRO || i>this.getFila() && queHay(i, j)!=null && queHay(i, j).getJugador().getId()!=ControlJugadoresAjedrez.BLANCO)
+			
 			casillaVisitable(resultado, i, j);
 		
 			
+		
+			
 	}
+	
+	
 	
 	
 	private void movements(ArrayList<Casilla> resultado,int i) {

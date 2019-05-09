@@ -14,18 +14,23 @@ public class Caballo extends PiezaAjedrez {
 	@Override
 	public ArrayList<Casilla> movimientosValidos() {
 		ArrayList<Casilla> resultado = new ArrayList<>();
-		/* La torre se puede mover en horizontal y vertical
-		 * Si hay una ficha de color contrario también puede moverse a esa posición comíendose la pieza 
-		*/
-		//Vertical descendente según el modelo interno (matriz)
-		casillasVisitables (resultado, 1, 0);
-		//Vertical ascendente según el modelo interno (matriz)
-		casillasVisitables (resultado, -1, 0);
+		int fila=this.getFilaAjedrez();
+		int columna=this.getColumnaAjedrez();
+		/*
+		- A - C -
+		B - - - E
+		- - * - -
+		D - - - G
+		- F - H -
+		 */
+		int[][] moves= {{fila+2, columna-1},{fila+1,columna-2},{fila+2,columna+1},{fila+1,columna+2},{fila-1, columna-2},{fila-2,columna-1},{fila-1,columna+2},{fila-2,columna-1}};
 		
-		//Horiznotal izquierda según el modelo interno (matriz)
-		casillasVisitables (resultado, 0, -1);
-		//Horizontal derecha según el modelo interno (matriz)
-		casillasVisitables (resultado, 0, 1);
+		for (int i = 0; i < moves.length; i++) {
+			casillaVisitable(resultado, moves[i][0], moves[i][1]);
+			
+		}
+		
+		
 		
 		return resultado;
 	}
