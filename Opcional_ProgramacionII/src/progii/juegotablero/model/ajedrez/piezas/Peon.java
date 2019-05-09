@@ -15,11 +15,11 @@ public class Peon extends PiezaAjedrez {
 	public ArrayList<Casilla> movimientosValidos() {
 		ArrayList<Casilla> resultado = new ArrayList<>();
 
-		casillasVisitables(resultado, 1, 1);
-		casillasVisitables(resultado, -1, 1);
-		casillasVisitables(resultado, -1, -1);
-		casillasVisitables(resultado, 1, -1);
-
+		
+		casillaVisitable(resultado, 0, this.getColumna()+1);
+		casillaVisitable(resultado, 0, this.getColumna()-1);
+		casillaVisitable(resultado, this.getFila()+1, this.getColumna()+1);
+		
 		return resultado;
 	}
 }
