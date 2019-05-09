@@ -35,10 +35,10 @@ public class GestorHistorial {
 	 * @param movimiento Movimiento a guardar
 	 */
 	public void guardarMovimiento(Movimiento movimiento) {
+		
+		pilaDeshacer.push(movimiento);
 		if (!pilaRehacer.isEmpty())
 			pilaRehacer.makeEmpty();
-		else
-			pilaDeshacer.push(movimiento);
 	}
 
 	/**
@@ -48,13 +48,14 @@ public class GestorHistorial {
 	 * @throws MovimientoException En caso de que no haya movimientos que deshacer
 	 */
 	public Movimiento deshacer() throws MovimientoException {
+		Movimiento resMovimiento;
 		try {
-			return pilaDeshacer.pop();
+			resMovimiento= pilaDeshacer.pop();
 		} catch (EmptyStackException e) {
 			// si esta vacia lanza excepcion
 			throw new MovimientoException("No se puede deshacer porque no hay movimientos para deshacer");
 		}
-
+		return resMovimiento;
 	}
 
 	/**
@@ -64,14 +65,15 @@ public class GestorHistorial {
 	 * @throws MovimientoException En caso de que no haya movimientos que rehacer
 	 */
 	public Movimiento rehacer() throws MovimientoException {
+		Movimiento resMovimiento;
 		try {
-			Movimiento res = pilaRehacer.pop();
-			pilaDeshacer.push(res);
-			return res;
+			resMovimiento = pilaRehacer.pop();
+			pilaDeshacer.push(resMovimiento);
+			
 		} catch (EmptyStackException e) {
 			throw new MovimientoException("No se puede rehacer porque no hay movimientos para rehacer");
 		}
-
+		return resMovimiento;
 	}
 
 }
