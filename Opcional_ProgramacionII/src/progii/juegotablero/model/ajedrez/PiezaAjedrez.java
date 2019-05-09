@@ -146,9 +146,15 @@ public abstract class PiezaAjedrez extends Pieza {
 	protected void casillasVisitables (ArrayList<Casilla> resultado,int incFila, int incColumna){
 		//itFila=Posicion(Fila)+incFila  incrementa 
 		//itColumna=Posicion(Fila)+incFila
-		//si EstaDentroLimites y queHay es null(NO hay pieza) -> añadimos a arraylist
-		for (int itFila = super.getFila()+incFila,itCol = super.getColumna()+incColumna; movimientoDentroLimites(itFila, itCol) && queHay(itFila,itCol)==null; itFila+=incFila,itCol+=incColumna) {
-			resultado.add(resultado.size(), new Casilla(itFila, itCol));
+		//si EstaDentroLimites y queHay es null(NO hay pieza) -> añadimos a arraylist	
+		for (int itFila = super.getFila()+incFila,itCol = super.getColumna()+incColumna; movimientoDentroLimites(itFila, itCol) ; itFila+=incFila,itCol+=incColumna) {
+			if(queHay(itFila,itCol)!=null && this.getJugador().getId() == ControlJugadoresAjedrez.NEGRO) {
+				resultado.add(resultado.size(), new Casilla(itFila, itCol));
+			}
+			else if (queHay(itFila,itCol)==null) {
+				resultado.add(resultado.size(), new Casilla(itFila, itCol));
+			}
+			
 		}
 		
 	}
