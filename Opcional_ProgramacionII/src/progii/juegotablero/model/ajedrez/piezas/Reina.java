@@ -19,7 +19,11 @@ public class Reina extends PiezaAjedrez {
 		casillasVisitables(resultado, -1, 1);
 		casillasVisitables(resultado, -1, -1);
 		casillasVisitables(resultado, 1, -1);
-
+		casillasVisitables (resultado, 1, 0);
+		casillasVisitables (resultado, -1, 0);
+		casillasVisitables (resultado, 0, -1);
+		casillasVisitables (resultado, 0, 1);
+		
 		return resultado;
 	}
 }

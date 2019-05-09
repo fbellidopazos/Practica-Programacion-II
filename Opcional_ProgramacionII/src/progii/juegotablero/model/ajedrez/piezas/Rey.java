@@ -15,14 +15,23 @@ public class Rey extends PiezaAjedrez{
 	public ArrayList<Casilla> movimientosValidos() {
 		ArrayList<Casilla> resultado = new ArrayList<>();
 		
-		casillasVisitables(resultado, 1, 1);
-		casillasVisitables(resultado, -1, 1);
-		casillasVisitables(resultado, -1, -1);
-		casillasVisitables(resultado, 1, -1);
-		casillasVisitables(resultado, 1, 0);
-		casillasVisitables(resultado, 0, 1);
-		casillasVisitables(resultado, 0, -1);
-		casillasVisitables(resultado, -1, 0);
+		int reyFila=this.getFila();
+		int reyColumna=this.getColumna();
+		
+		/*
+		A B C
+		D * E
+		F G H
+		 */
+		
+		casillaVisitable(resultado, reyFila+1, reyColumna+1);//C
+		casillaVisitable(resultado, reyFila+1, reyColumna);//B
+		casillaVisitable(resultado, reyFila+1, reyColumna-1); //A
+		casillaVisitable(resultado, reyFila, reyColumna-1);//D
+		casillaVisitable(resultado, reyFila, reyColumna+1);//E
+		casillaVisitable(resultado, reyFila-1, reyColumna+1);//H
+		casillaVisitable(resultado, reyFila-1, reyColumna);//G
+		casillaVisitable(resultado, reyFila-1, reyColumna-1);//F
 		
 		return resultado;
 	}
