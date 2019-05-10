@@ -21,17 +21,12 @@ public class Peon extends PiezaAjedrez {
 		if(start) {
 			diagonals(resultado, 1);
 			diagonals(resultado, 2);
-			
+			movements(resultado, 1);
+			//Compruebo si puede mover 2 comprobando antes si puede mover 1 
 			if(this.getJugador().getId()==ControlJugadoresAjedrez.BLANCO && movimientoDentroLimites(this.getFila()-2, this.getColumna()) && movimientoDentroLimites(this.getFila()-1, this.getColumna()) && queHay(this.getFila()-1, this.getColumna())==null &&queHay(this.getFila()-2, this.getColumna())==null)
 				resultado.add(resultado.size(), new Casilla(this.getFila()-2, this.getColumna()));
 			else if (this.getJugador().getId()==ControlJugadoresAjedrez.NEGRO && movimientoDentroLimites(this.getFila()+2, this.getColumna())  && movimientoDentroLimites(this.getFila()+1, this.getColumna()) && queHay(this.getFila()+1, this.getColumna())==null && queHay(this.getFila()+2, this.getColumna())==null)
 				resultado.add(resultado.size(), new Casilla(this.getFila()+2, this.getColumna()));
-				
-			
-			movements(resultado, 1);
-			
-			
-			
 			start=false;
 		}
 		else {
