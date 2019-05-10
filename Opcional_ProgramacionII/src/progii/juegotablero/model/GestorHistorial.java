@@ -3,6 +3,15 @@ package progii.juegotablero.model;
 import progii.juegotablero.exceptions.MovimientoException;
 import stacks.exceptions.EmptyStackException;
 import stacks.Stack;
+import anotacion.Programacion2; 
+@Programacion2 (
+		nombreAutor1 = "Santiago",
+		apellidoAutor1 = "Moreno Domínguez",
+		emailUPMAutor1 = "santiago.morenod@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 
 /**
  * Clase que gestiona el historial de movimientos de la partida
@@ -35,7 +44,7 @@ public class GestorHistorial {
 	 * @param movimiento Movimiento a guardar
 	 */
 	public void guardarMovimiento(Movimiento movimiento) {
-		
+
 		pilaDeshacer.push(movimiento);
 		if (!pilaRehacer.isEmpty())
 			pilaRehacer.makeEmpty();
@@ -48,16 +57,16 @@ public class GestorHistorial {
 	 * @throws MovimientoException En caso de que no haya movimientos que deshacer
 	 */
 	public Movimiento deshacer() throws MovimientoException {
-		 
+
 		try {
-			Movimiento resMovimiento= pilaDeshacer.pop();
+			Movimiento resMovimiento = pilaDeshacer.pop();
 			pilaRehacer.push(resMovimiento);
 			return resMovimiento;
 		} catch (EmptyStackException e) {
 			// si esta vacia lanza excepcion
 			throw new MovimientoException("No se puede deshacer porque no hay movimientos para deshacer");
 		}
-		
+
 	}
 
 	/**
@@ -67,15 +76,15 @@ public class GestorHistorial {
 	 * @throws MovimientoException En caso de que no haya movimientos que rehacer
 	 */
 	public Movimiento rehacer() throws MovimientoException {
-		Movimiento resMovimiento;
 		try {
-			resMovimiento = pilaRehacer.pop();
+			Movimiento resMovimiento = pilaRehacer.pop();
 			pilaDeshacer.push(resMovimiento);
-			
+			return resMovimiento;
+
 		} catch (EmptyStackException e) {
 			throw new MovimientoException("No se puede rehacer porque no hay movimientos para rehacer");
 		}
-		return resMovimiento;
+
 	}
 
 }

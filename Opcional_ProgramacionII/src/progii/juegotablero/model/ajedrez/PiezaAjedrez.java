@@ -6,6 +6,15 @@ import list.ArrayList;
 import progii.juegotablero.model.Casilla;
 import progii.juegotablero.model.Jugador;
 import progii.juegotablero.model.Pieza;
+import anotacion.Programacion2; 
+@Programacion2 (
+		nombreAutor1 = "Santiago",
+		apellidoAutor1 = "Moreno Domínguez",
+		emailUPMAutor1 = "santiago.morenod@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 
 /**
  * Clase que modela una pieza de ajedrez
@@ -55,10 +64,8 @@ public abstract class PiezaAjedrez extends Pieza {
 	 */
 	@Override
 	public boolean movimientoDentroLimites(int toFila, int toColumna) {
-		// Si toFila y toColumna esta entre 0 y 7 y Pieza(ClasePadre) su posición no es
-		// igual a la dada entonces TRUE
-	
-		return (( 0 <= toFila && toFila <= 7 && 0 <= toColumna && toColumna <= 7) && !(this.getFilaAjedrez()==toFila && this.getColumnaAjedrez()==toColumna));
+		// Si toFila y toColumna esta entre 0 y 7 y Pieza(ClasePadre) su posición no es igual a la dada entonces TRUE
+		return (!(this.getFila()==toFila && this.getColumna()==toColumna) && ( 0 <= toFila && toFila <= 7 && 0 <= toColumna && toColumna <= 7));
 		
 	}
 
@@ -74,7 +81,7 @@ public abstract class PiezaAjedrez extends Pieza {
 	 *         destino es distinta de la de origen. Se retorma false e.o.c.
 	 */
 	public boolean puedeMover(int toFila, char toColumna) {
-		return (!(this.getFilaAjedrez()==toFila && this.getColumnaAjedrez()==toColumna) && movimientoDentroLimites(toFila - 1, toColumna - 97));
+		return (movimientoDentroLimites(8-toFila, 8-toColumna - 96));
 		
 	}
 
@@ -168,12 +175,9 @@ public abstract class PiezaAjedrez extends Pieza {
 		// itFila=Posicion(Fila)+incFila incrementa
 		// itColumna=Posicion(Fila)+incFila
 		boolean condition = true;
-
 		for (int itFila = this.getFila() + incFila, itCol = this.getColumna()+ incColumna; condition; itFila += incFila, itCol += incColumna) {
-			
 			casillaVisitable(resultado, itFila, itCol);
-			if (!movimientoDentroLimites(itFila, itCol) || queHay(itFila, itCol) != null)
-				condition = false;
+			condition = !(!movimientoDentroLimites(itFila, itCol) || queHay(itFila, itCol) != null);
 		}
 
 	}

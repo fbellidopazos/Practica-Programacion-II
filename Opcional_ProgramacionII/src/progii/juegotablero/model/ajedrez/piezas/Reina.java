@@ -5,6 +5,15 @@ import progii.juegotablero.model.Jugador;
 import progii.juegotablero.model.Casilla;
 import progii.juegotablero.model.ajedrez.PiezaAjedrez;
 import progii.juegotablero.model.ajedrez.TipoPiezaAjedrez;
+import anotacion.Programacion2; 
+@Programacion2 (
+		nombreAutor1 = "Santiago",
+		apellidoAutor1 = "Moreno Domínguez",
+		emailUPMAutor1 = "santiago.morenod@alumnos.upm.es",
+		nombreAutor2 = "Fernando",
+		apellidoAutor2 = "Bellido Pazos", 
+		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
+	)
 
 public class Reina extends PiezaAjedrez {
 	public Reina(Jugador jugador, int fila, char columna) {

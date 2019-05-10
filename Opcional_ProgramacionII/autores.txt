@@ -2,15 +2,15 @@
 // que se encuentra en moodle
 // Este paquete hay que importarlo para que el compilador 
 // reconozca la anotaci�n @Programacion2
-import anotacion.Programacion2; 
+
 
 // Rellenar siempre los datos del Autor 1
 // Para entrega en grupo rellenar los datos del Autor 2
-
+import anotacion.Programacion2; 
 @Programacion2 (
-		nombreAutor1 = "Nombre",
-		apellidoAutor1 = "Apellido1 Apellido2",
-		emailUPMAutor1 = "mail@alumnos.upm.es",
+		nombreAutor1 = "Santiago",
+		apellidoAutor1 = "Moreno Domínguez",
+		emailUPMAutor1 = "santiago.morenod@alumnos.upm.es",
 		nombreAutor2 = "Fernando",
 		apellidoAutor2 = "Bellido Pazos", 
 		emailUPMAutor2 = "f.bpazos@alumnos.upm.es"
