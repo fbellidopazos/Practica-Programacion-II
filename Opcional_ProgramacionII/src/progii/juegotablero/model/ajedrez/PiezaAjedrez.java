@@ -58,7 +58,7 @@ public abstract class PiezaAjedrez extends Pieza {
 		// Si toFila y toColumna esta entre 0 y 7 y Pieza(ClasePadre) su posición no es
 		// igual a la dada entonces TRUE
 	
-		return (( 0 <= toFila && toFila <= 7 && 0 <= toColumna && toColumna <= 7) && (toFila!=this.getFila() || toColumna!=this.getColumna()));
+		return (( 0 <= toFila && toFila <= 7 && 0 <= toColumna && toColumna <= 7) && !(this.getFilaAjedrez()==toFila && this.getColumnaAjedrez()==toColumna));
 		
 	}
 
@@ -169,9 +169,8 @@ public abstract class PiezaAjedrez extends Pieza {
 		// itColumna=Posicion(Fila)+incFila
 		boolean condition = true;
 
-		for (int itFila = this.getFila() + incFila, itCol = this.getColumna()
-				+ incColumna; condition; itFila += incFila, itCol += incColumna) {
-
+		for (int itFila = this.getFila() + incFila, itCol = this.getColumna()+ incColumna; condition; itFila += incFila, itCol += incColumna) {
+			
 			casillaVisitable(resultado, itFila, itCol);
 			if (!movimientoDentroLimites(itFila, itCol) || queHay(itFila, itCol) != null)
 				condition = false;
