@@ -50,7 +50,7 @@ public class Peon extends PiezaAjedrez {
 		if(player.getId()==ControlJugadoresAjedrez.NEGRO && movimientoDentroLimites((fila+i), (columna-i)) && queHay((fila+i), (columna-i))!=null && queHay((fila+i), (columna-i)).getJugador().getId()==ControlJugadoresAjedrez.BLANCO)
 			resultado.add(resultado.size(), new Casilla((fila+i), (columna-i)));
 		if(player.getId()==ControlJugadoresAjedrez.NEGRO && movimientoDentroLimites((fila+i), (columna+i)) && queHay((fila+i), (columna+i))!=null && queHay((fila+i), (columna+i)).getJugador().getId()==ControlJugadoresAjedrez.BLANCO)
-			casillaVisitable(resultado, (fila+i), (columna+i));
+			resultado.add(resultado.size(), new Casilla((fila+i), (columna+i)));
 	}
 	
 	private void movements(ArrayList<Casilla> resultado,int i) {
